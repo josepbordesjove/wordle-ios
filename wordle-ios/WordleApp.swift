@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct wordle_iosApp: App {
+struct WordleApp: App {
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {

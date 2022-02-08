@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FF726BFA27B2F1C8003F735C /* wordle_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF726BF927B2F1C8003F735C /* wordle_iosApp.swift */; };
+		FF726BFA27B2F1C8003F735C /* WordleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF726BF927B2F1C8003F735C /* WordleApp.swift */; };
 		FF726BFC27B2F1C8003F735C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF726BFB27B2F1C8003F735C /* ContentView.swift */; };
 		FF726BFE27B2F1CA003F735C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF726BFD27B2F1CA003F735C /* Assets.xcassets */; };
 		FF726C0127B2F1CA003F735C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF726C0027B2F1CA003F735C /* Preview Assets.xcassets */; };
@@ -16,6 +16,7 @@
 		FF726C1027B2F1CA003F735C /* wordle_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF726C0F27B2F1CA003F735C /* wordle_iosTests.swift */; };
 		FF726C1A27B2F1CA003F735C /* wordle_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF726C1927B2F1CA003F735C /* wordle_iosUITests.swift */; };
 		FF726C1C27B2F1CA003F735C /* wordle_iosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF726C1B27B2F1CA003F735C /* wordle_iosUITestsLaunchTests.swift */; };
+		FF726C2A27B2F575003F735C /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = FF726C2927B2F575003F735C /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FF726BF627B2F1C8003F735C /* wordle-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wordle-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF726BF927B2F1C8003F735C /* wordle_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wordle_iosApp.swift; sourceTree = "<group>"; };
+		FF726BF627B2F1C8003F735C /* Wordle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF726BF927B2F1C8003F735C /* WordleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleApp.swift; sourceTree = "<group>"; };
 		FF726BFB27B2F1C8003F735C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FF726BFD27B2F1CA003F735C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF726C0027B2F1CA003F735C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -55,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF726C2A27B2F575003F735C /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +90,7 @@
 		FF726BF727B2F1C8003F735C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FF726BF627B2F1C8003F735C /* wordle-ios.app */,
+				FF726BF627B2F1C8003F735C /* Wordle.app */,
 				FF726C0B27B2F1CA003F735C /* wordle-iosTests.xctest */,
 				FF726C1527B2F1CA003F735C /* wordle-iosUITests.xctest */,
 			);
@@ -98,7 +100,7 @@
 		FF726BF827B2F1C8003F735C /* wordle-ios */ = {
 			isa = PBXGroup;
 			children = (
-				FF726BF927B2F1C8003F735C /* wordle_iosApp.swift */,
+				FF726BF927B2F1C8003F735C /* WordleApp.swift */,
 				FF726BFB27B2F1C8003F735C /* ContentView.swift */,
 				FF726BFD27B2F1CA003F735C /* Assets.xcassets */,
 				FF726C0227B2F1CA003F735C /* Persistence.swift */,
@@ -149,8 +151,11 @@
 			dependencies = (
 			);
 			name = "wordle-ios";
+			packageProductDependencies = (
+				FF726C2927B2F575003F735C /* ComposableArchitecture */,
+			);
 			productName = "wordle-ios";
-			productReference = FF726BF627B2F1C8003F735C /* wordle-ios.app */;
+			productReference = FF726BF627B2F1C8003F735C /* Wordle.app */;
 			productType = "com.apple.product-type.application";
 		};
 		FF726C0A27B2F1CA003F735C /* wordle-iosTests */ = {
@@ -221,6 +226,9 @@
 				Base,
 			);
 			mainGroup = FF726BED27B2F1C8003F735C;
+			packageReferences = (
+				FF726C2827B2F575003F735C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = FF726BF727B2F1C8003F735C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -266,7 +274,7 @@
 				FF726C0327B2F1CA003F735C /* Persistence.swift in Sources */,
 				FF726BFC27B2F1C8003F735C /* ContentView.swift in Sources */,
 				FF726C0627B2F1CA003F735C /* wordle_ios.xcdatamodeld in Sources */,
-				FF726BFA27B2F1C8003F735C /* wordle_iosApp.swift in Sources */,
+				FF726BFA27B2F1C8003F735C /* WordleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,18 +441,20 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.josepbordesjove.wordle-ios";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Wordle;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -462,18 +472,20 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.josepbordesjove.wordle-ios";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Wordle;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -613,6 +625,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FF726C2827B2F575003F735C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FF726C2927B2F575003F735C /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF726C2827B2F575003F735C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		FF726C0427B2F1CA003F735C /* wordle_ios.xcdatamodeld */ = {

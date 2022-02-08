@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FF726BFA27B2F1C8003F735C /* WordleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF726BF927B2F1C8003F735C /* WordleApp.swift */; };
-		FF726BFC27B2F1C8003F735C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF726BFB27B2F1C8003F735C /* ContentView.swift */; };
+		FF726BFC27B2F1C8003F735C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF726BFB27B2F1C8003F735C /* HomeView.swift */; };
 		FF726BFE27B2F1CA003F735C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF726BFD27B2F1CA003F735C /* Assets.xcassets */; };
 		FF726C0127B2F1CA003F735C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF726C0027B2F1CA003F735C /* Preview Assets.xcassets */; };
 		FF726C0327B2F1CA003F735C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF726C0227B2F1CA003F735C /* Persistence.swift */; };
@@ -18,6 +18,7 @@
 		FF726C1C27B2F1CA003F735C /* wordle_iosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF726C1B27B2F1CA003F735C /* wordle_iosUITestsLaunchTests.swift */; };
 		FF726C2A27B2F575003F735C /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = FF726C2927B2F575003F735C /* ComposableArchitecture */; };
 		FF726C2C27B2F9AF003F735C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF726C2B27B2F9AF003F735C /* LaunchScreen.storyboard */; };
+		FF726C2E27B319EC003F735C /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF726C2D27B319EC003F735C /* GameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +41,7 @@
 /* Begin PBXFileReference section */
 		FF726BF627B2F1C8003F735C /* Wordle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF726BF927B2F1C8003F735C /* WordleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleApp.swift; sourceTree = "<group>"; };
-		FF726BFB27B2F1C8003F735C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FF726BFB27B2F1C8003F735C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FF726BFD27B2F1CA003F735C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF726C0027B2F1CA003F735C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FF726C0227B2F1CA003F735C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		FF726C1927B2F1CA003F735C /* wordle_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wordle_iosUITests.swift; sourceTree = "<group>"; };
 		FF726C1B27B2F1CA003F735C /* wordle_iosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wordle_iosUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FF726C2B27B2F9AF003F735C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FF726C2D27B319EC003F735C /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				FF726BF927B2F1C8003F735C /* WordleApp.swift */,
-				FF726BFB27B2F1C8003F735C /* ContentView.swift */,
+				FF726BFB27B2F1C8003F735C /* HomeView.swift */,
+				FF726C2D27B319EC003F735C /* GameView.swift */,
 				FF726C2B27B2F9AF003F735C /* LaunchScreen.storyboard */,
 				FF726BFD27B2F1CA003F735C /* Assets.xcassets */,
 				FF726C0227B2F1CA003F735C /* Persistence.swift */,
@@ -276,9 +279,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF726C0327B2F1CA003F735C /* Persistence.swift in Sources */,
-				FF726BFC27B2F1C8003F735C /* ContentView.swift in Sources */,
+				FF726BFC27B2F1C8003F735C /* HomeView.swift in Sources */,
 				FF726C0627B2F1CA003F735C /* wordle_ios.xcdatamodeld in Sources */,
 				FF726BFA27B2F1C8003F735C /* WordleApp.swift in Sources */,
+				FF726C2E27B319EC003F735C /* GameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

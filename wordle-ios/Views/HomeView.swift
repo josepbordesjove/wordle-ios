@@ -40,7 +40,14 @@ struct HomeView: View {
                         .buttonStyle(ScaleButtonStyle())
                         .padding(40)
                         Button {
-                            print("Select button was tapped")
+                            for family: String in UIFont.familyNames
+                                   {
+                                       print(family)
+                                       for names: String in UIFont.fontNames(forFamilyName: family)
+                                       {
+                                           print("== \(names)")
+                                       }
+                                   }
                         } label: {
                             Image("select_btn")
                         }

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF5D948827B458E30031C814 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5D948727B458E30031C814 /* HeaderView.swift */; };
+		FF5D948A27B45B5C0031C814 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5D948927B45B5C0031C814 /* BoardView.swift */; };
+		FF5D948C27B45B670031C814 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5D948B27B45B670031C814 /* KeyboardView.swift */; };
+		FF5D948F27B45E280031C814 /* CatalanKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5D948E27B45E280031C814 /* CatalanKeyboard.swift */; };
+		FF5D949127B462E50031C814 /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5D949027B462E50031C814 /* Letter.swift */; };
+		FF5D949427B466F70031C814 /* palamecia_titling.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF5D949327B466F70031C814 /* palamecia_titling.ttf */; };
 		FF726BFA27B2F1C8003F735C /* WordleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF726BF927B2F1C8003F735C /* WordleApp.swift */; };
 		FF726BFC27B2F1C8003F735C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF726BFB27B2F1C8003F735C /* HomeView.swift */; };
 		FF726BFE27B2F1CA003F735C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF726BFD27B2F1CA003F735C /* Assets.xcassets */; };
@@ -39,6 +45,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FF5D948727B458E30031C814 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		FF5D948927B45B5C0031C814 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		FF5D948B27B45B670031C814 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
+		FF5D948E27B45E280031C814 /* CatalanKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalanKeyboard.swift; sourceTree = "<group>"; };
+		FF5D949027B462E50031C814 /* Letter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
+		FF5D949327B466F70031C814 /* palamecia_titling.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = palamecia_titling.ttf; sourceTree = "<group>"; };
+		FF5D949527B468DB0031C814 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FF726BF627B2F1C8003F735C /* Wordle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF726BF927B2F1C8003F735C /* WordleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleApp.swift; sourceTree = "<group>"; };
 		FF726BFB27B2F1C8003F735C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -81,6 +94,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF5D948527B457F10031C814 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				FF5D948727B458E30031C814 /* HeaderView.swift */,
+				FF5D948927B45B5C0031C814 /* BoardView.swift */,
+				FF5D948B27B45B670031C814 /* KeyboardView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		FF5D948627B457FA0031C814 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FF726BFB27B2F1C8003F735C /* HomeView.swift */,
+				FF726C2D27B319EC003F735C /* GameView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FF5D948D27B45E0A0031C814 /* Keyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FF5D948E27B45E280031C814 /* CatalanKeyboard.swift */,
+				FF5D949027B462E50031C814 /* Letter.swift */,
+			);
+			path = Keyboards;
+			sourceTree = "<group>";
+		};
+		FF5D949227B466E30031C814 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FF5D949327B466F70031C814 /* palamecia_titling.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		FF726BED27B2F1C8003F735C = {
 			isa = PBXGroup;
 			children = (
@@ -104,9 +153,12 @@
 		FF726BF827B2F1C8003F735C /* wordle-ios */ = {
 			isa = PBXGroup;
 			children = (
+				FF5D949527B468DB0031C814 /* Info.plist */,
 				FF726BF927B2F1C8003F735C /* WordleApp.swift */,
-				FF726BFB27B2F1C8003F735C /* HomeView.swift */,
-				FF726C2D27B319EC003F735C /* GameView.swift */,
+				FF5D948627B457FA0031C814 /* Views */,
+				FF5D948527B457F10031C814 /* Subviews */,
+				FF5D948D27B45E0A0031C814 /* Keyboards */,
+				FF5D949227B466E30031C814 /* Fonts */,
 				FF726C2B27B2F9AF003F735C /* LaunchScreen.storyboard */,
 				FF726BFD27B2F1CA003F735C /* Assets.xcassets */,
 				FF726C0227B2F1CA003F735C /* Persistence.swift */,
@@ -252,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF726C2C27B2F9AF003F735C /* LaunchScreen.storyboard in Resources */,
+				FF5D949427B466F70031C814 /* palamecia_titling.ttf in Resources */,
 				FF726C0127B2F1CA003F735C /* Preview Assets.xcassets in Resources */,
 				FF726BFE27B2F1CA003F735C /* Assets.xcassets in Resources */,
 			);
@@ -278,9 +331,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF5D948F27B45E280031C814 /* CatalanKeyboard.swift in Sources */,
+				FF5D948A27B45B5C0031C814 /* BoardView.swift in Sources */,
+				FF5D948C27B45B670031C814 /* KeyboardView.swift in Sources */,
 				FF726C0327B2F1CA003F735C /* Persistence.swift in Sources */,
+				FF5D948827B458E30031C814 /* HeaderView.swift in Sources */,
 				FF726BFC27B2F1C8003F735C /* HomeView.swift in Sources */,
 				FF726C0627B2F1CA003F735C /* wordle_ios.xcdatamodeld in Sources */,
+				FF5D949127B462E50031C814 /* Letter.swift in Sources */,
 				FF726BFA27B2F1C8003F735C /* WordleApp.swift in Sources */,
 				FF726C2E27B319EC003F735C /* GameView.swift in Sources */,
 			);
@@ -446,6 +504,7 @@
 				DEVELOPMENT_TEAM = 2DX87RQR8M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "wordle-ios/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -478,6 +537,7 @@
 				DEVELOPMENT_TEAM = 2DX87RQR8M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "wordle-ios/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

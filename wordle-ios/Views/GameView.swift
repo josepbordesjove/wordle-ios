@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GameView: View {
     @Environment(\.presentationMode) var presentationMode
+    @State var game: Game = .init(correctWord: "holas", triedWords: ["oooeh", "uhhoo", "holaj", "ooooo", "hhhhh", "holas"])
     
     var body: some View {
         ZStack {
@@ -18,6 +19,8 @@ struct GameView: View {
                 .ignoresSafeArea()
             VStack {
                 HeaderView(presentationMode: presentationMode)
+                BoardView(game: $game)
+                Spacer()
                 KeyboardView()
                 Button {
                     print("Check button was tapped")

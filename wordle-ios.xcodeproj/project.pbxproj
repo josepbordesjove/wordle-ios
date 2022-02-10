@@ -25,6 +25,10 @@
 		FF726C2A27B2F575003F735C /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = FF726C2927B2F575003F735C /* ComposableArchitecture */; };
 		FF726C2C27B2F9AF003F735C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF726C2B27B2F9AF003F735C /* LaunchScreen.storyboard */; };
 		FF726C2E27B319EC003F735C /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF726C2D27B319EC003F735C /* GameView.swift */; };
+		FF91A84027B59B18008352AC /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF91A83F27B59B17008352AC /* Game.swift */; };
+		FF91A84227B59BB5008352AC /* GameConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF91A84127B59BB5008352AC /* GameConfiguration.swift */; };
+		FF91A84427B59C55008352AC /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF91A84327B59C55008352AC /* Box.swift */; };
+		FF91A84727B5A68B008352AC /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF91A84627B5A68B008352AC /* String+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +70,10 @@
 		FF726C1B27B2F1CA003F735C /* wordle_iosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wordle_iosUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FF726C2B27B2F9AF003F735C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF726C2D27B319EC003F735C /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		FF91A83F27B59B17008352AC /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		FF91A84127B59BB5008352AC /* GameConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfiguration.swift; sourceTree = "<group>"; };
+		FF91A84327B59C55008352AC /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		FF91A84627B5A68B008352AC /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,9 +163,11 @@
 			children = (
 				FF5D949527B468DB0031C814 /* Info.plist */,
 				FF726BF927B2F1C8003F735C /* WordleApp.swift */,
+				FF91A84527B5A680008352AC /* Extension */,
 				FF5D948627B457FA0031C814 /* Views */,
 				FF5D948527B457F10031C814 /* Subviews */,
 				FF5D948D27B45E0A0031C814 /* Keyboards */,
+				FF91A83C27B59AFA008352AC /* Models */,
 				FF5D949227B466E30031C814 /* Fonts */,
 				FF726C2B27B2F9AF003F735C /* LaunchScreen.storyboard */,
 				FF726BFD27B2F1CA003F735C /* Assets.xcassets */,
@@ -191,6 +201,24 @@
 				FF726C1B27B2F1CA003F735C /* wordle_iosUITestsLaunchTests.swift */,
 			);
 			path = "wordle-iosUITests";
+			sourceTree = "<group>";
+		};
+		FF91A83C27B59AFA008352AC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FF91A83F27B59B17008352AC /* Game.swift */,
+				FF91A84127B59BB5008352AC /* GameConfiguration.swift */,
+				FF91A84327B59C55008352AC /* Box.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FF91A84527B5A680008352AC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FF91A84627B5A68B008352AC /* String+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,11 +363,15 @@
 				FF5D948A27B45B5C0031C814 /* BoardView.swift in Sources */,
 				FF5D948C27B45B670031C814 /* KeyboardView.swift in Sources */,
 				FF726C0327B2F1CA003F735C /* Persistence.swift in Sources */,
+				FF91A84227B59BB5008352AC /* GameConfiguration.swift in Sources */,
 				FF5D948827B458E30031C814 /* HeaderView.swift in Sources */,
+				FF91A84427B59C55008352AC /* Box.swift in Sources */,
 				FF726BFC27B2F1C8003F735C /* HomeView.swift in Sources */,
+				FF91A84027B59B18008352AC /* Game.swift in Sources */,
 				FF726C0627B2F1CA003F735C /* wordle_ios.xcdatamodeld in Sources */,
 				FF5D949127B462E50031C814 /* Letter.swift in Sources */,
 				FF726BFA27B2F1C8003F735C /* WordleApp.swift in Sources */,
+				FF91A84727B5A68B008352AC /* String+.swift in Sources */,
 				FF726C2E27B319EC003F735C /* GameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

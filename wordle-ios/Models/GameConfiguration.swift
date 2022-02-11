@@ -1,12 +1,3 @@
-//
-//  GameConfiguration.swift
-//  wordle-ios
-//
-//  Created by Josep Bordes Jové on 10/2/22.
-//
-
-import Foundation
-
 enum GameConfiguration {
     case standard
     

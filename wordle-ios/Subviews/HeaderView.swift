@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct HeaderView: View {
-    @Binding var presentationMode: PresentationMode
+    var backButtonTapped: () -> Void
 
     var body: some View {
         VStack {
             HStack {
                 Button {
-                    presentationMode.dismiss()
+                    backButtonTapped()
                 } label: {
                     Image("back_btn")
                 }

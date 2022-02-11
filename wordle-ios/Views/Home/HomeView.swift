@@ -7,8 +7,11 @@
 
 import SwiftUI
 import CoreData
+import ComposableArchitecture
 
 struct HomeView: View {
+    let store: Store<AppState, AppAction>
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -33,7 +36,7 @@ struct HomeView: View {
                         Button {
                             print("Play button was tapped")
                         } label: {
-                            NavigationLink(destination: GameView()) {
+                            NavigationLink(destination: GameView(correctWord: WordsFiveLetterList.all.randomElement() ?? "aaaaa")) {
                                 Image("play_btn")
                             }
                         }
@@ -68,11 +71,5 @@ struct ScaleButtonStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .scaleEffect(configuration.isPressed ? 1.1 : 1)
-    }
-}
-
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
     }
 }

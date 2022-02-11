@@ -7,7 +7,14 @@
 
 import SwiftUI
 
+enum KeyboardAction {
+    case added(Letter)
+    case delete
+}
+
 struct KeyboardView: View {
+    var keyboardAction: (KeyboardAction) -> Void
+    
     var body: some View {
         VStack(spacing: 15) {
             ForEach(CatalanKeyboardLines.allCases) { line in
@@ -15,7 +22,7 @@ struct KeyboardView: View {
                     ForEach(line.letters) { letter in
                         HStack {
                             Button {
-                                print("Letter \(letter.value) was tapped")
+                                keyboardAction(.added(letter))
                             } label: {
                                 Text(letter.value)
                                     .font(.custom("PalameciaTitling-Regular", size: 16))
@@ -30,7 +37,7 @@ struct KeyboardView: View {
                             .background(Color.white)
                             if letter == line.letters.last && line == CatalanKeyboardLines.allCases.last {
                                 Button {
-                                    print("Check button was tapped")
+                                    keyboardAction(.delete)
                                 } label: {
                                     Image("delete_btn")
                                 }
@@ -41,14 +48,5 @@ struct KeyboardView: View {
             }
         }
         .padding(10)
-    }
-}
-
-struct KeyboardView_Previews: PreviewProvider {
-    static var previews: some View {
-        KeyboardView()
-            .previewLayout(PreviewLayout.fixed(width: 400, height: 400))
-            .padding()
-            .previewDisplayName("Default preview")
     }
 }

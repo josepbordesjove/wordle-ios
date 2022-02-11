@@ -1,36 +1,33 @@
 //
-//  Game.swift
+//  GameState.swift
 //  wordle-ios
 //
-//  Created by Josep Bordes Jové on 10/2/22.
+//  Created by Josep Bordes 2 on 11/2/22.
 //
 
 import Foundation
 
-struct Game {
-    struct BoxPosition {
-        let row: Int
-        let column: Int
-    }
-    
+struct GameState: Equatable {
     let wordMaxLength: Int
-    let correctWord: String
     let maximumTries: Int
+    let correctWord: String
 
-    var currentWord: String?
-    var triedWords: [String]
-
+    var currentWord: String? = nil
+    var triedWords: [String] = []
     
-    init(configuration: GameConfiguration = .standard, correctWord: String, triedWords: [String] = []) {
+    init(configuration: GameConfiguration = .standard, correctWord: String) {
         self.wordMaxLength = configuration.columns
-        self.correctWord = correctWord
         self.maximumTries = configuration.rows
-        self.triedWords = triedWords
-        self.currentWord = nil
+        self.correctWord = correctWord
     }
     
     func box(for position: BoxPosition) -> Box {
         guard position.row < triedWords.count else {
+            if position.row == triedWords.count {
+                let tryingWord = currentWord ?? ""
+                return .trying(tryingWord[position.column])
+            }
+
             return .unknown
         }
         

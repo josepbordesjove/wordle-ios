@@ -7,12 +7,26 @@
 
 import Foundation
 
-enum ButtonImage: String {
-    case back = "back_btn"
-    case check = "check_btn"
-    case close = "close_btn"
-    case delete = "delete_btn"
-    case play = "play_btn"
-    case select = "select_btn"
-    case settings = "settings_btn"
+enum ButtonImage {
+    case back
+    case check
+    case close
+    case delete
+    case play
+    case select
+    case settings
+    case generic(String)
+    
+    var imageName: String {
+        switch self {
+        case .back: return "back_btn"
+        case .check: return "check_btn"
+        case .close: return "close_btn"
+        case .delete: return "delete_btn"
+        case .play: return "play_btn"
+        case .select: return "select_btn"
+        case .settings: return "settings_btn"
+        case .generic: return "list_img"
+        }
+    }
 }

@@ -27,6 +27,7 @@
 		BE9BC87A27B8279F00BCFF43 /* KeyboardKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BC87927B8279F00BCFF43 /* KeyboardKeyView.swift */; };
 		BE9BC87C27B82BCB00BCFF43 /* levels.json in Resources */ = {isa = PBXBuildFile; fileRef = BE9BC87B27B82BCB00BCFF43 /* levels.json */; };
 		BE9BC88027B82E3000BCFF43 /* GameColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BC87F27B82E3000BCFF43 /* GameColor.swift */; };
+		BE9BC88227B8316E00BCFF43 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BC88127B8316E00BCFF43 /* ModalView.swift */; };
 		FF5D948827B458E30031C814 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5D948727B458E30031C814 /* HeaderView.swift */; };
 		FF5D948A27B45B5C0031C814 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5D948927B45B5C0031C814 /* BoardView.swift */; };
 		FF5D948C27B45B670031C814 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5D948B27B45B670031C814 /* KeyboardView.swift */; };
@@ -88,6 +89,7 @@
 		BE9BC87927B8279F00BCFF43 /* KeyboardKeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardKeyView.swift; sourceTree = "<group>"; };
 		BE9BC87B27B82BCB00BCFF43 /* levels.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = levels.json; sourceTree = "<group>"; };
 		BE9BC87F27B82E3000BCFF43 /* GameColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameColor.swift; sourceTree = "<group>"; };
+		BE9BC88127B8316E00BCFF43 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		FF5D948727B458E30031C814 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		FF5D948927B45B5C0031C814 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		FF5D948B27B45B670031C814 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				FF5D948727B458E30031C814 /* HeaderView.swift */,
 				BE9BC86627B80CB800BCFF43 /* BackgroundView.swift */,
 				BE9BC86827B812F100BCFF43 /* ToastView.swift */,
+				BE9BC88127B8316E00BCFF43 /* ModalView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE9BC88227B8316E00BCFF43 /* ModalView.swift in Sources */,
 				FF5D948F27B45E280031C814 /* CatalanKeyboard.swift in Sources */,
 				FF5D948A27B45B5C0031C814 /* BoardView.swift in Sources */,
 				FF5D948C27B45B670031C814 /* KeyboardView.swift in Sources */,

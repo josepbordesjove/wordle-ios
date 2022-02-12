@@ -35,7 +35,7 @@ struct GameView: View {
                         case .delete: viewStore.send(.deleteLastLetter)
                         }
                     }
-                    ButtonView(buttonImage: .check) {
+                    ButtonView(buttonImage: .check, disabled: viewStore.state.gameEnded) {
                         withAnimation() {
                             viewStore.send(.checkLastWord)
                         }
@@ -48,6 +48,13 @@ struct GameView: View {
                     ToastView(errorMessage: error.description) {
                         withAnimation() {
                             viewStore.send(.dismissToast)
+                        }
+                    }
+                }
+                if let dialog = viewStore.state.gameDialog {
+                    ModalView(title: dialog.title, subtitle: dialog.subtitle, buttonTitle: dialog.buttonTitle) {
+                        withAnimation() {
+                            viewStore.send(.dismissDialog)
                         }
                     }
                 }

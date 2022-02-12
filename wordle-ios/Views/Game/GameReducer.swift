@@ -23,9 +23,15 @@ final class GameReducer {
             
             state.triedWords.append(currentWord)
             state.currentWord = nil
+            
+            if currentWord == state.correctWord || state.triedWords.count == state.maximumTries {
+                state.gameEnded = true
+                state.gameDialog = currentWord == state.correctWord ? .finishedSuccessfully : .finishedNotWinning
+            }
+
             return .none
         case .appendLetter(let letter):
-            guard (state.currentWord ?? "").count <= state.wordMaxLength - 1 else { return .none }
+            guard !state.gameEnded, (state.currentWord ?? "").count <= state.wordMaxLength - 1 else { return .none }
             if state.currentWord == nil {
                 state.currentWord = letter.value
             } else {
@@ -34,6 +40,7 @@ final class GameReducer {
             
             return .none
         case .deleteLastLetter:
+            guard !state.gameEnded else { return .none }
             _ = state.currentWord?.popLast()
             return .none
         case .backButtonTapped:
@@ -41,6 +48,9 @@ final class GameReducer {
             return .none
         case .dismissToast:
             state.gameError = nil
+            return .none
+        case .dismissDialog:
+            state.gameDialog = nil
             return .none
         }
     }

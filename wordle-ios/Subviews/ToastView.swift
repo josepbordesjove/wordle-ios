@@ -51,6 +51,7 @@ struct ToastView: View {
             }
         }
         .transition(AnyTransition.move(edge: .top).combined(with: .scale).combined(with: .opacity))
+        .zIndex(100)
     }
 }
 

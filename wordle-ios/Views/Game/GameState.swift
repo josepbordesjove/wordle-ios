@@ -24,6 +24,27 @@ enum GameStateError: Error {
 enum GameStateDialog {
     case finishedSuccessfully
     case finishedNotWinning
+    
+    var title: String {
+        switch self {
+        case .finishedSuccessfully: return "Has guanyat la partida!"
+        case .finishedNotWinning: return "No passa res..."
+        }
+    }
+    
+    var subtitle: String {
+        switch self {
+        case .finishedSuccessfully: return "Vas pel bon camí jove aprenent, el català no te frens amb tu."
+        case .finishedNotWinning: return "Continua així. Pompeu Fabra no ho va aprendre tot amb un dia."
+        }
+    }
+    
+    var buttonTitle: String {
+        switch self {
+        case .finishedSuccessfully: return "D'acord!"
+        case .finishedNotWinning: return "Quina pena..."
+        }
+    }
 }
 
 struct GameState: Equatable {
@@ -33,9 +54,10 @@ struct GameState: Equatable {
 
     var currentWord: String? = nil
     var triedWords: [String] = []
+    var gameEnded: Bool = false
     
     var gameError: GameStateError? = nil
-    var isShowingDialog: GameStateDialog? = nil
+    var gameDialog: GameStateDialog? = nil
     
     init(configuration: GameConfiguration = .standard, correctWord: String) {
         self.wordMaxLength = configuration.columns

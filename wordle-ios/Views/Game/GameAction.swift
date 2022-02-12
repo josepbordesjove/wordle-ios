@@ -13,4 +13,5 @@ enum GameAction: Equatable {
     case appendLetter(Letter)
     case backButtonTapped
     case dismissToast
+    case dismissDialog
 }

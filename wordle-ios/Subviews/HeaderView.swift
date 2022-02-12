@@ -18,7 +18,7 @@ struct HeaderView: View {
             .frame(width: 50, height: 50, alignment: .leading)
             .buttonStyle(ScaleButtonStyle())
             Spacer()
-            Image("logo-img")
+            Image("logo_img")
             Spacer()
             Spacer()
                 .frame(width: 50, height: 50, alignment: .trailing)

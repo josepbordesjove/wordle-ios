@@ -13,7 +13,7 @@ struct ButtonNavigationView<Content: View>: View {
 
     var body: some View {
         NavigationLink(destination: destination) {
-            Image(buttonImage.rawValue)
+            Image(buttonImage.imageName)
                 .resizable()
                 .scaledToFit()
         }

@@ -15,13 +15,9 @@ struct BoardView: View {
             ForEach(0..<gameState.maximumTries) { row in
                 HStack {
                     ForEach(0..<gameState.wordMaxLength) { column in
-                        Button {
-                            print("Column \(column) Row \(row) was tapped")
-                        } label: {
-                            Text(text(column: column, row: row))
-                                .font(.custom("PalameciaTitling-Regular", size: 28))
-                                .foregroundColor(.white)
-                        }
+                        Text(text(column: column, row: row))
+                            .font(.custom("PalameciaTitling-Regular", size: 28))
+                            .foregroundColor(.white)
                         .frame(width: 55, height: 55)
                         .cornerRadius(4)
                         .overlay(
@@ -48,10 +44,10 @@ struct BoardView: View {
         let box = gameState.box(for: .init(row: row, column: column))
         
         switch box {
-        case.unknown: return .gray
-        case .correct: return .green
-        case .incorrect, .trying: return .gray
-        case .contained: return .yellow
+        case.unknown: return Color.box
+        case .correct: return Color.boxCorrect
+        case .incorrect, .trying: return Color.box
+        case .contained: return Color.boxContained
         }
     }
 }

@@ -12,14 +12,12 @@ final class GameReducer {
         switch action {
         case .checkLastWord:
             guard let currentWord = state.currentWord, currentWord.count == 5 else {
-                // TODO: Handle error
-                print("The word is not finished")
+                state.gameError = .notFilledWordLength
                 return .none
             }
             
             guard WordsFiveLetterList.all.contains(currentWord) else {
-                // TODO: Handle error
-                print("The word is not contained in the list")
+                state.gameError = .wordDoesNotExist
                 return .none
             }
             
@@ -40,6 +38,9 @@ final class GameReducer {
             return .none
         case .backButtonTapped:
             state.currentWord = nil
+            return .none
+        case .dismissToast:
+            state.gameError = nil
             return .none
         }
     }

@@ -9,28 +9,23 @@ import SwiftUI
 
 struct HeaderView: View {
     var backButtonTapped: () -> Void
-
+    
     var body: some View {
-        VStack {
-            HStack {
-                Button {
-                    backButtonTapped()
-                } label: {
-                    Image("back_btn")
-                }
-                .frame(width: 50, height: 50, alignment: .leading)
-                .buttonStyle(ScaleButtonStyle())
-                Spacer()
-                Image("logo-img")
-                Spacer()
-                Spacer()
-                    .frame(width: 50, height: 50, alignment: .trailing)
+        HStack {
+            ButtonView(buttonImage: .back) {
+                backButtonTapped()
             }
-            .padding(.top, 50)
-            .padding(.trailing, 20)
-            .padding(.leading, 20)
+            .frame(width: 50, height: 50, alignment: .leading)
+            .buttonStyle(ScaleButtonStyle())
             Spacer()
+            Image("logo-img")
+            Spacer()
+            Spacer()
+                .frame(width: 50, height: 50, alignment: .trailing)
         }
+        .padding(.top, 50)
+        .padding(.bottom, 10)
+        .padding(.horizontal, 20)
         .navigationBarTitle("")
         .navigationBarHidden(true)
     }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 enum KeyboardAction {
     case added(Letter)
@@ -13,6 +14,11 @@ enum KeyboardAction {
 }
 
 struct KeyboardView: View {
+    private enum Constant {
+        static let keyTappedSoundId: UInt32 = 1123
+        static let deleteTappedSoundId: UInt32 = 1155
+    }
+    
     var keyboardAction: (KeyboardAction) -> Void
     
     var body: some View {
@@ -22,25 +28,17 @@ struct KeyboardView: View {
                     ForEach(line.letters) { letter in
                         HStack {
                             Button {
+                                AudioServicesPlaySystemSound(Constant.keyTappedSoundId)
                                 keyboardAction(.added(letter))
                             } label: {
-                                Text(letter.value)
-                                    .font(.custom("PalameciaTitling-Regular", size: 16))
-                                    .foregroundColor(.accentColor)
+                                KeyboardKeyView(letter: letter)
                             }
-                            .frame(width: 30, height: 40)
-                            .cornerRadius(4)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 4)
-                                    .stroke(Color.gray, lineWidth: 2)
-                            )
-                            .background(Color.white)
                             if letter == line.letters.last && line == CatalanKeyboardLines.allCases.last {
-                                Button {
+                                ButtonView(buttonImage: .delete) {
+                                    AudioServicesPlaySystemSound(Constant.deleteTappedSoundId)
                                     keyboardAction(.delete)
-                                } label: {
-                                    Image("delete_btn")
                                 }
+                                .frame(height: 40)
                             }
                         }
                     }

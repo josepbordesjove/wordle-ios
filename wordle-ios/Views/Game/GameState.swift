@@ -7,6 +7,25 @@
 
 import Foundation
 
+enum GameStateError: Error {
+    case notFilledWordLength
+    case wordDoesNotExist
+    
+    var description: String {
+        switch self {
+        case .notFilledWordLength:
+            return "La paraula introduïda no te la llargada suficient"
+        case .wordDoesNotExist:
+            return "La paraula introduïda no existeix"
+        }
+    }
+}
+
+enum GameStateDialog {
+    case finishedSuccessfully
+    case finishedNotWinning
+}
+
 struct GameState: Equatable {
     let wordMaxLength: Int
     let maximumTries: Int
@@ -14,6 +33,9 @@ struct GameState: Equatable {
 
     var currentWord: String? = nil
     var triedWords: [String] = []
+    
+    var gameError: GameStateError? = nil
+    var isShowingDialog: GameStateDialog? = nil
     
     init(configuration: GameConfiguration = .standard, correctWord: String) {
         self.wordMaxLength = configuration.columns

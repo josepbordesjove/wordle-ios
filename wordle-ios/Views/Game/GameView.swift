@@ -21,10 +21,7 @@ struct GameView: View {
     var body: some View {
         WithViewStore(self.store) { viewStore in
             ZStack {
-                Image("background-2")
-                    .resizable()
-                    .scaledToFill()
-                    .ignoresSafeArea()
+                BackgroundView(style: .sky)
                 VStack {
                     HeaderView {
                         viewStore.send(.backButtonTapped)
@@ -38,13 +35,21 @@ struct GameView: View {
                         case .delete: viewStore.send(.deleteLastLetter)
                         }
                     }
-                    Button {
-                        viewStore.send(.checkLastWord)
-                    } label: {
-                        Image("check_btn")
+                    ButtonView(buttonImage: .check) {
+                        withAnimation() {
+                            viewStore.send(.checkLastWord)
+                        }
                     }
                     .buttonStyle(ScaleButtonStyle())
                     .padding(.bottom, 40)
+                    .padding(.horizontal, 40)
+                }
+                if let error = viewStore.state.gameError {
+                    ToastView(errorMessage: error.description) {
+                        withAnimation() {
+                            viewStore.send(.dismissToast)
+                        }
+                    }
                 }
             }
         }

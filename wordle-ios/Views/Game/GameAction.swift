@@ -8,8 +8,9 @@
 import Foundation
 
 enum GameAction: Equatable {
-  case checkLastWord
-  case deleteLastLetter
-  case appendLetter(Letter)
-  case backButtonTapped
+    case checkLastWord
+    case deleteLastLetter
+    case appendLetter(Letter)
+    case backButtonTapped
+    case dismissToast
 }

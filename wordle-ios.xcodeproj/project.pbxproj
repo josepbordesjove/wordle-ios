@@ -43,6 +43,10 @@
 		BE9BC8A227B949A000BCFF43 /* GameListEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BC8A127B949A000BCFF43 /* GameListEnvironment.swift */; };
 		BE9BC8A427B949AA00BCFF43 /* GameListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BC8A327B949AA00BCFF43 /* GameListFactory.swift */; };
 		BE9BC8A627B949B400BCFF43 /* GameFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BC8A527B949B400BCFF43 /* GameFactory.swift */; };
+		BE9BC8AA27B9585800BCFF43 /* LevelFinished.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BC8A927B9585800BCFF43 /* LevelFinished.swift */; };
+		BE9BC8AC27B95DCE00BCFF43 /* StoreFinishedLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BC8AB27B95DCE00BCFF43 /* StoreFinishedLevel.swift */; };
+		BE9BC8AE27B95DD800BCFF43 /* GetFinishedLevels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BC8AD27B95DD800BCFF43 /* GetFinishedLevels.swift */; };
+		BE9BC8B027B977E300BCFF43 /* GameCompletedStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BC8AF27B977E300BCFF43 /* GameCompletedStatus.swift */; };
 		FF5D948827B458E30031C814 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5D948727B458E30031C814 /* HeaderView.swift */; };
 		FF5D948A27B45B5C0031C814 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5D948927B45B5C0031C814 /* BoardView.swift */; };
 		FF5D948C27B45B670031C814 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5D948B27B45B670031C814 /* KeyboardView.swift */; };
@@ -53,7 +57,7 @@
 		FF726BFC27B2F1C8003F735C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF726BFB27B2F1C8003F735C /* HomeView.swift */; };
 		FF726BFE27B2F1CA003F735C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF726BFD27B2F1CA003F735C /* Assets.xcassets */; };
 		FF726C0127B2F1CA003F735C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF726C0027B2F1CA003F735C /* Preview Assets.xcassets */; };
-		FF726C0327B2F1CA003F735C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF726C0227B2F1CA003F735C /* Persistence.swift */; };
+		FF726C0327B2F1CA003F735C /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF726C0227B2F1CA003F735C /* PersistenceController.swift */; };
 		FF726C0627B2F1CA003F735C /* wordle_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF726C0427B2F1CA003F735C /* wordle_ios.xcdatamodeld */; };
 		FF726C1027B2F1CA003F735C /* wordle_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF726C0F27B2F1CA003F735C /* wordle_iosTests.swift */; };
 		FF726C1A27B2F1CA003F735C /* wordle_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF726C1927B2F1CA003F735C /* wordle_iosUITests.swift */; };
@@ -120,6 +124,10 @@
 		BE9BC8A127B949A000BCFF43 /* GameListEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListEnvironment.swift; sourceTree = "<group>"; };
 		BE9BC8A327B949AA00BCFF43 /* GameListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListFactory.swift; sourceTree = "<group>"; };
 		BE9BC8A527B949B400BCFF43 /* GameFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFactory.swift; sourceTree = "<group>"; };
+		BE9BC8A927B9585800BCFF43 /* LevelFinished.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelFinished.swift; sourceTree = "<group>"; };
+		BE9BC8AB27B95DCE00BCFF43 /* StoreFinishedLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreFinishedLevel.swift; sourceTree = "<group>"; };
+		BE9BC8AD27B95DD800BCFF43 /* GetFinishedLevels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFinishedLevels.swift; sourceTree = "<group>"; };
+		BE9BC8AF27B977E300BCFF43 /* GameCompletedStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCompletedStatus.swift; sourceTree = "<group>"; };
 		FF5D948727B458E30031C814 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		FF5D948927B45B5C0031C814 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		FF5D948B27B45B670031C814 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
@@ -132,7 +140,7 @@
 		FF726BFB27B2F1C8003F735C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FF726BFD27B2F1CA003F735C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF726C0027B2F1CA003F735C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		FF726C0227B2F1CA003F735C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		FF726C0227B2F1CA003F735C /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		FF726C0527B2F1CA003F735C /* wordle_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wordle_ios.xcdatamodel; sourceTree = "<group>"; };
 		FF726C0B27B2F1CA003F735C /* wordle-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "wordle-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF726C0F27B2F1CA003F735C /* wordle_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wordle_iosTests.swift; sourceTree = "<group>"; };
@@ -260,6 +268,7 @@
 		BE9BC88B27B936D200BCFF43 /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				BE9BC8A727B957B500BCFF43 /* CoreData */,
 				BE9BC89427B9455700BCFF43 /* Repository.swift */,
 				BE9BC89027B9453600BCFF43 /* CoreDataStore.swift */,
 				BE9BC89227B9454200BCFF43 /* UserDefaultsStore.swift */,
@@ -273,8 +282,19 @@
 			children = (
 				BE9BC88E27B944FC00BCFF43 /* GetLevels.swift */,
 				BE9BC89827B9458100BCFF43 /* GetNextLevel.swift */,
+				BE9BC8AB27B95DCE00BCFF43 /* StoreFinishedLevel.swift */,
+				BE9BC8AD27B95DD800BCFF43 /* GetFinishedLevels.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		BE9BC8A727B957B500BCFF43 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FF726C0227B2F1CA003F735C /* PersistenceController.swift */,
+				FF726C0427B2F1CA003F735C /* wordle_ios.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		FF5D948527B457F10031C814 /* Subviews */ = {
@@ -353,8 +373,6 @@
 				BE9BC84A27B6AF0D00BCFF43 /* Data */,
 				FF726C2B27B2F9AF003F735C /* LaunchScreen.storyboard */,
 				FF726BFD27B2F1CA003F735C /* Assets.xcassets */,
-				FF726C0227B2F1CA003F735C /* Persistence.swift */,
-				FF726C0427B2F1CA003F735C /* wordle_ios.xcdatamodeld */,
 				FF726BFF27B2F1CA003F735C /* Preview Content */,
 			);
 			path = "wordle-ios";
@@ -393,6 +411,8 @@
 				FF91A84327B59C55008352AC /* Box.swift */,
 				BE9BC86027B6C7C500BCFF43 /* BoxPosition.swift */,
 				BE9BC88527B8433E00BCFF43 /* Level.swift */,
+				BE9BC8A927B9585800BCFF43 /* LevelFinished.swift */,
+				BE9BC8AF27B977E300BCFF43 /* GameCompletedStatus.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -555,7 +575,7 @@
 				BE9BC89727B9456700BCFF43 /* InMemoryStore.swift in Sources */,
 				BE9BC86127B6C7C500BCFF43 /* BoxPosition.swift in Sources */,
 				BE9BC87A27B8279F00BCFF43 /* KeyboardKeyView.swift in Sources */,
-				FF726C0327B2F1CA003F735C /* Persistence.swift in Sources */,
+				FF726C0327B2F1CA003F735C /* PersistenceController.swift in Sources */,
 				BE9BC88627B8433E00BCFF43 /* Level.swift in Sources */,
 				BE9BC86327B6D02700BCFF43 /* GameReducer.swift in Sources */,
 				BE9BC89127B9453600BCFF43 /* CoreDataStore.swift in Sources */,
@@ -569,9 +589,13 @@
 				BE9BC88A27B9365D00BCFF43 /* HomeFactory.swift in Sources */,
 				BE9BC86727B80CB800BCFF43 /* BackgroundView.swift in Sources */,
 				BE9BC85127B6B63D00BCFF43 /* GameAction.swift in Sources */,
+				BE9BC8AE27B95DD800BCFF43 /* GetFinishedLevels.swift in Sources */,
 				BE9BC8A027B9499400BCFF43 /* GameListReducer.swift in Sources */,
 				FF91A84427B59C55008352AC /* Box.swift in Sources */,
+				BE9BC8B027B977E300BCFF43 /* GameCompletedStatus.swift in Sources */,
+				BE9BC8AC27B95DCE00BCFF43 /* StoreFinishedLevel.swift in Sources */,
 				BE9BC88F27B944FC00BCFF43 /* GetLevels.swift in Sources */,
+				BE9BC8AA27B9585800BCFF43 /* LevelFinished.swift in Sources */,
 				BE9BC86927B812F100BCFF43 /* ToastView.swift in Sources */,
 				BE9BC85827B6B95C00BCFF43 /* HomeState.swift in Sources */,
 				BE9BC88427B842DD00BCFF43 /* LocalFileManager.swift in Sources */,

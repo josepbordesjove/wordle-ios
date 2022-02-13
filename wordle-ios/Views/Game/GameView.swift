@@ -4,6 +4,7 @@ import ComposableArchitecture
 struct GameView: View {
     @Environment(\.presentationMode) var presentationMode
     let store: Store<GameState, GameAction>
+    var onFinished: (() -> Void)?
     
     var body: some View {
         WithViewStore(self.store) { viewStore in
@@ -41,7 +42,9 @@ struct GameView: View {
                 if let dialog = viewStore.state.gameDialog {
                     ModalView(title: dialog.title, subtitle: dialog.subtitle, buttonTitle: dialog.buttonTitle) {
                         withAnimation() {
+                            self.onFinished?()
                             viewStore.send(.dismissDialog)
+                            presentationMode.wrappedValue.dismiss()
                         }
                     }
                 }

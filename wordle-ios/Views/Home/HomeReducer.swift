@@ -11,25 +11,27 @@ final class HomeReducer {
     lazy var reducer = Reducer<HomeState, HomeAction, HomeEnvironment> { state, action, environment in
         switch action {
         case .updateNextWordChallenge:
-            return .none
-        case .ordersReceived(let results):
-            print("Something happened")
+            return self.effects.getNextLevel()
+        case .nextLevelReceived(let result):
+            switch result {
+            case .success(let nextLevel): state.nextLevel = nextLevel
+            case .failure: break
+            }
             return .none
         }
     }
 }
 
 final class HomeEffects {
-//    let store: OrderCombineStoreProtocol
-//
-//    init(store: OrderCombineStoreProtocol) {
-//        self.store = store
-//    }
-//
-//    func fetch() -> Effect<HomeAction, Never> {
-//        return store.getTodayOrdersSummary()
-//            .catchToEffect()
-//            .map(HomeAction.ordersReceived)
-//
-//    }
+    private let getNextLevelUseCase: GetNextLevel.UseCase
+
+    init(getNextLevelUseCase: @escaping GetNextLevel.UseCase = GetNextLevel().execute) {
+        self.getNextLevelUseCase = getNextLevelUseCase
+    }
+
+    func getNextLevel() -> Effect<HomeAction, Never> {
+        return getNextLevelUseCase()
+            .catchToEffect()
+            .map(HomeAction.nextLevelReceived)
+    }
 }

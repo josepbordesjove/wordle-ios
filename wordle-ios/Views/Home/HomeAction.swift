@@ -1,4 +1,4 @@
 enum HomeAction {
     case updateNextWordChallenge
-    case ordersReceived(Result<[String], Error>)
+    case nextLevelReceived(Result<Level?, Error>)
 }

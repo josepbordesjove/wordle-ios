@@ -23,9 +23,10 @@ final class GameReducer {
             state.triedWords.append(currentWord)
             state.currentWord = nil
             
-            if currentWord == state.correctWord || state.triedWords.count == state.maximumTries {
+            if currentWord == state.levelPlaying.word || state.triedWords.count == state.maximumTries {
                 state.gameEnded = true
-                state.gameDialog = currentWord == state.correctWord ? .finishedSuccessfully : .finishedNotWinning
+                state.gameDialog = currentWord == state.levelPlaying.word ? .finishedSuccessfully : .finishedNotWinning
+                return self.effects.storeFinished(level: state.levelPlaying, tries: state.triedWords.count, success: currentWord == state.levelPlaying.word)
             }
 
             return .none
@@ -51,8 +52,22 @@ final class GameReducer {
         case .dismissDialog:
             state.gameDialog = nil
             return .none
+        case .storeLevelFinishedReceived:
+            return .none
         }
     }
 }
 
-final class GameEffects { }
+final class GameEffects {
+    private let storeFinishedLevelUseCase: StoreFinishedLevel.UseCase
+    
+    init(storeFinishedLevelUseCase: @escaping StoreFinishedLevel.UseCase = StoreFinishedLevel().execute) {
+        self.storeFinishedLevelUseCase = storeFinishedLevelUseCase
+    }
+    
+    func storeFinished(level: Level, tries: Int, success: Bool) -> Effect<GameAction, Never> {
+        storeFinishedLevelUseCase(level, tries, success)
+            .catchToEffect()
+            .map(GameAction.storeLevelFinishedReceived)
+    }
+}

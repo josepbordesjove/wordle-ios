@@ -1,7 +1,7 @@
 import Combine
 
 struct GetNextLevel {
-    typealias UseCase = () -> AnyPublisher<Level, Error>
+    typealias UseCase = () -> AnyPublisher<Level?, Error>
         
     private let repository: Repositoring
         
@@ -9,7 +9,7 @@ struct GetNextLevel {
         self.repository = repository
     }
     
-    func execute() -> AnyPublisher<Level, Error> {
+    func execute() -> AnyPublisher<Level?, Error> {
         repository.getNextLevel()
     }
 }

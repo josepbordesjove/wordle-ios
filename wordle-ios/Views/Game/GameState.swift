@@ -50,7 +50,7 @@ enum GameStateDialog {
 struct GameState: Equatable {
     let wordMaxLength: Int
     let maximumTries: Int
-    let correctWord: String
+    let levelPlaying: Level
 
     var currentWord: String? = nil
     var triedWords: [String] = []
@@ -59,10 +59,10 @@ struct GameState: Equatable {
     var gameError: GameStateError? = nil
     var gameDialog: GameStateDialog? = nil
     
-    init(configuration: GameConfiguration = .standard, correctWord: String) {
+    init(configuration: GameConfiguration = .standard, levelPlaying: Level) {
         self.wordMaxLength = configuration.columns
         self.maximumTries = configuration.rows
-        self.correctWord = correctWord
+        self.levelPlaying = levelPlaying
     }
     
     func box(for position: BoxPosition) -> Box {
@@ -75,6 +75,7 @@ struct GameState: Equatable {
             return .unknown
         }
         
+        let correctWord = levelPlaying.word
         let word = triedWords[position.row]
         let letter = word[position.column]
         

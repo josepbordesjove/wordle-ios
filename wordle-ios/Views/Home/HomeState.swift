@@ -1,3 +1,4 @@
 struct HomeState: Equatable {
-    let nextWordChallenge: String
+    var nextLevel: Level? = nil
+    var finishedLevels: [LevelFinished] = []
 }

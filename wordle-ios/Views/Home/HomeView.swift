@@ -12,8 +12,10 @@ struct HomeView: View {
                     VStack {
                         Spacer()
                         HStack {
-                            ButtonNavigationView(buttonImage: .play, destination: { GameFactory.build(correctWord: viewStore.state.nextWordChallenge) })
-                                .padding(40)
+                            if let nextLevel = viewStore.state.nextLevel {
+                                ButtonNavigationView(buttonImage: .play, destination: { GameFactory.build(levelToPlay: nextLevel, onFinished: { viewStore.send(.updateNextWordChallenge) }) })
+                                    .padding(40)
+                            }
                             ButtonNavigationView(buttonImage: .select, destination: { GameListFactory.build() })
                                 .padding(40)
                         }

@@ -1,3 +1,64 @@
 {
-
+  "levels": [
+    {
+      "key": "level_1",
+      "sortable_key": 1,
+      "name": "Nivell 1",
+      "word": "tarda"
+    },
+    {
+      "key": "level_2",
+      "sortable_key": 2,
+      "name": "Nivell 2",
+      "word": "dards"
+    },
+    {
+      "key": "level_3",
+      "sortable_key": 3,
+      "name": "Nivell 3",
+      "word": "moixi"
+    },
+    {
+      "key": "level_4",
+      "sortable_key": 4,
+      "name": "Nivell 4",
+      "word": "badia"
+    },
+    {
+      "key": "level_5",
+      "sortable_key": 5,
+      "name": "Nivell 5",
+      "word": "fluix"
+    },
+    {
+      "key": "level_6",
+      "sortable_key": 6,
+      "name": "Nivell 6",
+      "word": "fluix"
+    },
+    {
+      "key": "level_7",
+      "sortable_key": 7,
+      "name": "Nivell 7",
+      "word": "fluix"
+    },
+    {
+      "key": "level_8",
+      "sortable_key": 8,
+      "name": "Nivell 8",
+      "word": "fluix"
+    },
+    {
+      "key": "level_9",
+      "sortable_key": 9,
+      "name": "Nivell 9",
+      "word": "fluix"
+    },
+    {
+      "key": "level_10",
+      "sortable_key": 10,
+      "name": "Nivell 10",
+      "word": "fluix"
+    }
+  ]
 }

@@ -1,14 +1,13 @@
-//
-//  GameReducer.swift
-//  wordle-ios
-//
-//  Created by Josep Bordes 2 on 11/2/22.
-//
-
 import ComposableArchitecture
 
 final class GameReducer {
-    static let reducer = Reducer<GameState, GameAction, GameEnvironment> { state, action, environment in
+    private let effects: GameEffects
+    
+    init(effects: GameEffects) {
+        self.effects = effects
+    }
+    
+    lazy var reducer = Reducer<GameState, GameAction, GameEnvironment> { state, action, environment in
         switch action {
         case .checkLastWord:
             guard let currentWord = state.currentWord, currentWord.count == 5 else {
@@ -55,3 +54,5 @@ final class GameReducer {
         }
     }
 }
+
+final class GameEffects { }

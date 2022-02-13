@@ -1,35 +1,32 @@
-//
-//  ContentView.swift
-//  wordle-ios
-//
-//  Created by Josep Bordes Jové on 8/2/22.
-//
-
 import SwiftUI
-import CoreData
 import ComposableArchitecture
 
 struct HomeView: View {
-    let store: Store<AppState, AppAction>
-
+    let store: Store<HomeState, HomeAction>
+    
     var body: some View {
-        NavigationView {
-            ZStack {
-                BackgroundView(style: .grass)
-                VStack {
-                    Spacer()
-                    HStack {
-                        ButtonNavigationView(buttonImage: .play, destination: { GameView(correctWord: WordsFiveLetterList.all.randomElement() ?? "aaaaa") })
-                            .padding(40)
-                        ButtonNavigationView(buttonImage: .select, destination: { GameListView() })
-                            .padding(40)
+        WithViewStore(self.store) { viewStore in
+            NavigationView {
+                ZStack {
+                    BackgroundView(style: .grass)
+                    VStack {
+                        Spacer()
+                        HStack {
+                            ButtonNavigationView(buttonImage: .play, destination: { GameFactory.build(correctWord: viewStore.state.nextWordChallenge) })
+                                .padding(40)
+                            ButtonNavigationView(buttonImage: .select, destination: { GameListFactory.build() })
+                                .padding(40)
+                        }
+                        .padding(.bottom, 60)
                     }
-                    .padding(.bottom, 60)
                 }
+                .navigationBarTitle("")
+                .navigationBarHidden(true)
             }
-            .navigationBarTitle("")
-            .navigationBarHidden(true)
+            .navigationViewStyle(StackNavigationViewStyle())
+            .onAppear {
+                viewStore.send(.updateNextWordChallenge)
+            }
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
 }

@@ -11,13 +11,11 @@ import ComposableArchitecture
 @main
 struct WordleApp: App {
     let persistenceController = PersistenceController.shared
-    let store: Store<AppState, AppAction> = Store(initialState: AppState(),
-                                                  reducer: AppReduder.reducer,
-                                                  environment: AppEnvironment())
 
+    // TODO: Fetch properly the next word, should be a level instead of a word btw
     var body: some Scene {
         WindowGroup {
-            HomeView(store: store)
+            HomeFactory.build(nextWordChallenge: "tarda")
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

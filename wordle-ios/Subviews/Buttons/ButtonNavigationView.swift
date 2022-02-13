@@ -13,9 +13,22 @@ struct ButtonNavigationView<Content: View>: View {
 
     var body: some View {
         NavigationLink(destination: destination) {
-            Image(buttonImage.imageName)
-                .resizable()
-                .scaledToFit()
+            switch buttonImage {
+            case .generic(let string):
+                ZStack {
+                    Image(buttonImage.imageName)
+                        .resizable()
+                        .frame(height: 55)
+                        .scaledToFit()
+                    Text(string)
+                        .font(.custom("PalameciaTitling-Regular", size: 24))
+                        .foregroundColor(.white)
+                }
+            default:
+                Image(buttonImage.imageName)
+                    .resizable()
+                    .scaledToFit()
+            }
         }
         .buttonStyle(ScaleButtonStyle())
     }

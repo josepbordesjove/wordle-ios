@@ -39,7 +39,6 @@ struct ButtonView: View {
                     .resizable()
                     .scaledToFit()
             }
-            
         }
         .opacity(disabled ? 0.7 : 1)
         .disabled(disabled)

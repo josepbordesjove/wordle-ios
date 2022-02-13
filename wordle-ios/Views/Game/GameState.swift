@@ -48,6 +48,7 @@ struct GameState: Equatable {
     var currentWord: String? = nil
     var triedWords: [String] = []
     var gameEnded: Bool = false
+    var containedLetters: [Letter: LetterKeyboardStatus] = [:]
     
     var gameError: GameStateError? = nil
     var gameDialog: GameStateDialog? = nil
@@ -81,10 +82,36 @@ struct GameState: Equatable {
             let substring = word.substring(toIndex: position.column + 1)
             let lettersCountInSubstring = substring.filter({ String($0) == letter }).count
             let lettersCountInOriginalWord = correctWord.filter({ String($0) == letter }).count
+            let isContained = lettersCountInSubstring <= lettersCountInOriginalWord && correctLettersCount < lettersCountInWord
             
-            return lettersCountInSubstring <= lettersCountInOriginalWord && correctLettersCount < lettersCountInWord ? .contained(letter) : .incorrect(letter)
+            return isContained ? .contained(letter) : .incorrect(letter)
         }
 
         return .incorrect(letter)
+    }
+    
+    func letterKeyboardStatus(for letter: Letter) -> LetterKeyboardStatus {
+        guard triedWords.count > 0 else { return .unKnown }
+
+        let correctWordsLetters = levelPlaying.word.map { Letter(rawValue: String($0)) }
+        var containedLetters: [Letter: LetterKeyboardStatus] = [:]
+        
+        triedWords.forEach { triedWord in
+            let triedWordLetters = triedWord.map { Letter(rawValue: String($0)) }
+            
+            for i in 0..<correctWordsLetters.count {
+                if correctWordsLetters[i] == triedWordLetters[i] && triedWordLetters[i] == letter {
+                    containedLetters[letter] = .matched
+                }
+            }
+            
+            if correctWordsLetters.contains(letter) && triedWordLetters.contains(letter) && containedLetters[letter] != .matched {
+                containedLetters[letter] = .contained
+            } else if triedWordLetters.contains(letter) && containedLetters[letter] != .contained && containedLetters[letter] != .matched {
+                containedLetters[letter] = .notContained
+            }
+        }
+        
+        return containedLetters[letter] ?? .unKnown
     }
 }

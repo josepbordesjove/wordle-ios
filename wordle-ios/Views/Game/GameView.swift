@@ -22,7 +22,7 @@ struct GameView: View {
                             .foregroundColor(.white)
                         BoardView(gameState: viewStore.state)
                         Spacer()
-                        KeyboardView { action in
+                        KeyboardView(gameState: viewStore.state) { action in
                             switch action {
                             case .added(let letter): viewStore.send(.appendLetter(letter))
                             case .delete: viewStore.send(.deleteLastLetter)

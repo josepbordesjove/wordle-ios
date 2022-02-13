@@ -11,7 +11,7 @@ struct BoardView: View {
                         ZStack {
                             RoundedRectangle(cornerRadius: 4)
                                 .fill(color(column: column, row: row))
-                                .frame(minWidth: 35, maxWidth: calculateKeyWidthForBox(), minHeight: 35, maxHeight: calculateKeyWidthForBox())
+                                .frame(minWidth: 45, maxWidth: 60, minHeight: 45, maxHeight: 60)
                                 .aspectRatio(1, contentMode: .fit)
                                 .cornerRadius(4)
                                 .background(
@@ -41,17 +41,11 @@ struct BoardView: View {
         let box = gameState.box(for: .init(row: row, column: column))
         
         switch box {
-        case.unknown, .trying: return Color.box
+        case .unknown, .trying: return Color.box
         case .correct: return Color.boxCorrect
         case .incorrect: return Color.boxNotContained
         case .contained: return Color.boxContained
         }
-    }
-    
-    private func calculateKeyWidthForBox() -> CGFloat {
-        let maxBoxesPerRow = gameState.wordMaxLength + 1
-        let boxWidth = (UIScreen.main.bounds.width - 40 - CGFloat(maxBoxesPerRow * 10)) / CGFloat(maxBoxesPerRow)
-        return boxWidth * 1.2
     }
 }
 

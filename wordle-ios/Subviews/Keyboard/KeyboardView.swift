@@ -20,6 +20,7 @@ struct KeyboardView: View {
         static let keyboardHorizontalPadding: CGFloat = 10
     }
     
+    var gameState: GameState
     var keyboardAction: (KeyboardAction) -> Void
     private let keyboard = CatalanKeyboardLines.allCases
     
@@ -34,7 +35,7 @@ struct KeyboardView: View {
                                 AudioServicesPlaySystemSound(Constant.keyTappedSoundId)
                                 keyboardAction(.added(letter))
                             } label: {
-                                KeyboardKeyView(letter: letter, width: calculateKeyWidthForKeyboard())
+                                KeyboardKeyView(gameState: gameState, letter: letter, width: calculateKeyWidthForKeyboard())
                             }
                             if letter == line.letters.last && line == CatalanKeyboardLines.allCases.last {
                                 ButtonView(buttonImage: .delete) {

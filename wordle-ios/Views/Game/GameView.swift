@@ -7,48 +7,61 @@ struct GameView: View {
     var onFinished: (() -> Void)?
     
     var body: some View {
-        WithViewStore(self.store) { viewStore in
-            ZStack {
-                BackgroundView(style: .sky)
-                VStack {
-                    HeaderView {
-                        viewStore.send(.backButtonTapped)
-                        presentationMode.wrappedValue.dismiss()
-                    }
-                    BoardView(gameState: viewStore.state)
-                    Spacer()
-                    KeyboardView { action in
-                        switch action {
-                        case .added(let letter): viewStore.send(.appendLetter(letter))
-                        case .delete: viewStore.send(.deleteLastLetter)
-                        }
-                    }
-                    ButtonView(buttonImage: .check, disabled: viewStore.state.gameEnded) {
-                        withAnimation() {
-                            viewStore.send(.checkLastWord)
-                        }
-                    }
-                    .buttonStyle(ScaleButtonStyle())
-                    .padding(.bottom, 40)
-                    .padding(.horizontal, 40)
-                }
-                if let error = viewStore.state.gameError {
-                    ToastView(errorMessage: error.description) {
-                        withAnimation() {
-                            viewStore.send(.dismissToast)
-                        }
-                    }
-                }
-                if let dialog = viewStore.state.gameDialog {
-                    ModalView(title: dialog.title, subtitle: dialog.subtitle, buttonTitle: dialog.buttonTitle) {
-                        withAnimation() {
-                            self.onFinished?()
-                            viewStore.send(.dismissDialog)
+        NavigationView {
+            WithViewStore(self.store) { viewStore in
+                ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top)) {
+                    BackgroundView(style: .sky)
+                    VStack(spacing: 0) {
+                        HeaderView {
+                            viewStore.send(.backButtonTapped)
                             presentationMode.wrappedValue.dismiss()
+                        }
+                        .padding(.bottom, 10)
+                        Text(viewStore.levelPlaying.name)
+                            .font(.custom("PalameciaTitling-Regular", size: 22))
+                            .foregroundColor(.white)
+                        BoardView(gameState: viewStore.state)
+                        Spacer()
+                        KeyboardView { action in
+                            switch action {
+                            case .added(let letter): viewStore.send(.appendLetter(letter))
+                            case .delete: viewStore.send(.deleteLastLetter)
+                            }
+                        }
+                        Spacer()
+                            .frame(minHeight: 5, maxHeight: 10)
+                        ButtonView(buttonImage: .check, disabled: viewStore.state.gameEnded) {
+                            withAnimation() {
+                                viewStore.send(.checkLastWord)
+                            }
+                        }
+                        .frame(minHeight: 30, maxHeight: 45)
+                        .padding(.horizontal, 40)
+                        Spacer()
+                    }
+                    if let error = viewStore.state.gameError {
+                        ToastView(errorMessage: error.description) {
+                            withAnimation() {
+                                viewStore.send(.dismissToast)
+                            }
+                        }
+                    }
+                    if let dialog = viewStore.state.gameDialog {
+                        ModalView(title: dialog.title, subtitle: dialog.subtitle, buttonTitle: dialog.buttonTitle) {
+                            withAnimation() {
+                                self.onFinished?()
+                                viewStore.send(.dismissDialog)
+                                presentationMode.wrappedValue.dismiss()
+                            }
                         }
                     }
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+//        .navigationViewStyle(StackNavigationViewStyle())
     }
 }

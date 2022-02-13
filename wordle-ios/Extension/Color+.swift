@@ -11,4 +11,5 @@ extension Color {
     static let box = Color("BoxBackground")
     static let boxCorrect = Color("BoxCorrect")
     static let boxContained = Color("BoxContained")
+    static let boxNotContained = Color("BoxNotContained")
 }

@@ -17,13 +17,16 @@ struct KeyboardView: View {
     private enum Constant {
         static let keyTappedSoundId: UInt32 = 1123
         static let deleteTappedSoundId: UInt32 = 1155
+        static let keyboardHorizontalPadding: CGFloat = 10
     }
     
     var keyboardAction: (KeyboardAction) -> Void
+    private let keyboard = CatalanKeyboardLines.allCases
     
     var body: some View {
         VStack(spacing: 15) {
-            ForEach(CatalanKeyboardLines.allCases) { line in
+            Spacer()
+            ForEach(keyboard) { line in
                 HStack(spacing: 4) {
                     ForEach(line.letters) { letter in
                         HStack {
@@ -31,7 +34,7 @@ struct KeyboardView: View {
                                 AudioServicesPlaySystemSound(Constant.keyTappedSoundId)
                                 keyboardAction(.added(letter))
                             } label: {
-                                KeyboardKeyView(letter: letter)
+                                KeyboardKeyView(letter: letter, width: calculateKeyWidthForKeyboard())
                             }
                             if letter == line.letters.last && line == CatalanKeyboardLines.allCases.last {
                                 ButtonView(buttonImage: .delete) {
@@ -45,6 +48,11 @@ struct KeyboardView: View {
                 }
             }
         }
-        .padding(10)
+    }
+    
+    private func calculateKeyWidthForKeyboard() -> CGFloat {
+        let maxKeysPerRow = keyboard.sorted { $0.letters.count > $1.letters.count }.first!.letters.count + 1
+        let keyWidth = (UIScreen.main.bounds.width - Constant.keyboardHorizontalPadding * 2 - CGFloat(maxKeysPerRow * 4)) / CGFloat(maxKeysPerRow)
+        return keyWidth
     }
 }

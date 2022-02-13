@@ -1,10 +1,3 @@
-//
-//  Background.swift
-//  wordle-ios
-//
-//  Created by Josep Bordes 2 on 12/2/22.
-//
-
 import SwiftUI
 
 enum BackgroundStyle {
@@ -23,10 +16,15 @@ struct BackgroundView: View {
     let style: BackgroundStyle
     
     var body: some View {
-        Image(style.rawName)
-            .resizable()
-            .scaledToFill()
-            .ignoresSafeArea()
+        GeometryReader { geometry in
+            Image(style.rawName)
+                .resizable()
+                .ignoresSafeArea()
+                .scaledToFill()
+                .frame(width: geometry.size.width,
+                       height: geometry.size.height,
+                       alignment: .center)
+        }
     }
 }
 

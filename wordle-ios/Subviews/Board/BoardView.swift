@@ -1,30 +1,27 @@
-//
-//  BoardView.swift
-//  wordle-ios
-//
-//  Created by Josep Bordes Jové on 9/2/22.
-//
-
 import SwiftUI
 
 struct BoardView: View {
     var gameState: GameState
     
     var body: some View {
-        VStack {
+        VStack(spacing: 8) {
             ForEach(0..<gameState.maximumTries) { row in
-                HStack {
+                HStack(spacing: 8) {
                     ForEach(0..<gameState.wordMaxLength) { column in
-                        Text(text(column: column, row: row))
-                            .font(.custom("PalameciaTitling-Regular", size: 28))
-                            .foregroundColor(.white)
-                        .frame(width: 55, height: 55)
-                        .cornerRadius(4)
-                        .overlay(
+                        ZStack {
                             RoundedRectangle(cornerRadius: 4)
-                                .stroke(Color.white, lineWidth: 2)
-                        )
-                        .background(color(column: column, row: row))
+                                .fill(color(column: column, row: row))
+                                .frame(minWidth: 35, maxWidth: calculateKeyWidthForBox(), minHeight: 35, maxHeight: calculateKeyWidthForBox())
+                                .aspectRatio(1, contentMode: .fit)
+                                .cornerRadius(4)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 4)
+                                        .stroke(Color.white, lineWidth: 2)
+                                )
+                            Text(text(column: column, row: row))
+                                .font(.custom("PalameciaTitling-Regular", size: 28))
+                                .foregroundColor(.white)
+                        }
                     }
                 }
             }
@@ -44,10 +41,24 @@ struct BoardView: View {
         let box = gameState.box(for: .init(row: row, column: column))
         
         switch box {
-        case.unknown: return Color.box
+        case.unknown, .trying: return Color.box
         case .correct: return Color.boxCorrect
-        case .incorrect, .trying: return Color.box
+        case .incorrect: return Color.boxNotContained
         case .contained: return Color.boxContained
         }
+    }
+    
+    private func calculateKeyWidthForBox() -> CGFloat {
+        let maxBoxesPerRow = gameState.wordMaxLength + 1
+        let boxWidth = (UIScreen.main.bounds.width - 40 - CGFloat(maxBoxesPerRow * 10)) / CGFloat(maxBoxesPerRow)
+        return boxWidth * 1.2
+    }
+}
+
+struct BoardView_Previews: PreviewProvider {
+    static var previews: some View {
+        BoardView(gameState: .init(levelPlaying: .init(key: "", sortableKey: 1, name: "", word: "")))
+            .padding()
+            .previewDisplayName("Default preview")
     }
 }

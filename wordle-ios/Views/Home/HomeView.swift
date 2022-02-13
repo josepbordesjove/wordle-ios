@@ -5,9 +5,9 @@ struct HomeView: View {
     let store: Store<HomeState, HomeAction>
     
     var body: some View {
-        WithViewStore(self.store) { viewStore in
-            NavigationView {
-                ZStack {
+        NavigationView {
+            WithViewStore(self.store) { viewStore in
+                ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
                     BackgroundView(style: .grass)
                     VStack {
                         Spacer()
@@ -22,12 +22,13 @@ struct HomeView: View {
                         .padding(.bottom, 60)
                     }
                 }
+                .onAppear {
+                    viewStore.send(.updateNextWordChallenge)
+                }
+                .navigationBarBackButtonHidden(true)
+                .navigationBarTitleDisplayMode(.inline)
                 .navigationBarTitle("")
                 .navigationBarHidden(true)
-            }
-            .navigationViewStyle(StackNavigationViewStyle())
-            .onAppear {
-                viewStore.send(.updateNextWordChallenge)
             }
         }
     }

@@ -17,11 +17,15 @@ struct GameView: View {
                             presentationMode.wrappedValue.dismiss()
                         }
                         .padding(.bottom, 10)
-                        Text(viewStore.levelPlaying.name)
-                            .font(.custom("PalameciaTitling-Regular", size: 22))
-                            .foregroundColor(.white)
-                        BoardView(gameState: viewStore.state)
-                        Spacer()
+                        VStack {
+                            Text(viewStore.levelPlaying.name)
+                                .font(.custom("PalameciaTitling-Regular", size: 22))
+                                .foregroundColor(.white)
+                                .padding(.bottom, 10)
+                            Spacer()
+                            BoardView(gameState: viewStore.state)
+                            Spacer()
+                        }
                         KeyboardView(gameState: viewStore.state) { action in
                             switch action {
                             case .added(let letter): viewStore.send(.appendLetter(letter))
@@ -62,6 +66,5 @@ struct GameView: View {
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarTitle("")
         .navigationBarHidden(true)
-//        .navigationViewStyle(StackNavigationViewStyle())
     }
 }

@@ -34,31 +34,482 @@
       "key": "level_6",
       "sortable_key": 6,
       "name": "Nivell 6",
-      "word": "fluix"
+      "word": "amors"
     },
     {
       "key": "level_7",
       "sortable_key": 7,
       "name": "Nivell 7",
-      "word": "fluix"
+      "word": "brida"
     },
     {
       "key": "level_8",
       "sortable_key": 8,
       "name": "Nivell 8",
-      "word": "fluix"
+      "word": "broma"
     },
     {
       "key": "level_9",
       "sortable_key": 9,
       "name": "Nivell 9",
-      "word": "fluix"
+      "word": "llucs"
     },
     {
       "key": "level_10",
       "sortable_key": 10,
       "name": "Nivell 10",
-      "word": "fluix"
+      "word": "lloro"
+    }
+    ,
+    {
+      "key": "level_11",
+      "sortable_key": 11,
+      "name": "Nivell 11",
+      "word": "licit"
+    },
+    {
+      "key": "level_12",
+      "sortable_key": 12,
+      "name": "Nivell 12",
+      "word": "marit"
+    },
+    {
+      "key": "level_13",
+      "sortable_key": 13,
+      "name": "Nivell 13",
+      "word": "malla"
+    },
+    {
+      "key": "level_14",
+      "sortable_key": 14,
+      "name": "Nivell 14",
+      "word": "idees"
+    },
+    {
+      "key": "level_15",
+      "sortable_key": 15,
+      "name": "Nivell 15",
+      "word": "guapa"
+    },
+    {
+      "key": "level_16",
+      "sortable_key": 16,
+      "name": "Nivell 16",
+      "word": "fideu"
+    },
+    {
+      "key": "level_17",
+      "sortable_key": 17,
+      "name": "Nivell 17",
+      "word": "opera"
+    },
+    {
+      "key": "level_18",
+      "sortable_key": 18,
+      "name": "Nivell 18",
+      "word": "xacal"
+    },
+    {
+      "key": "level_19",
+      "sortable_key": 19,
+      "name": "Nivell 19",
+      "word": "pitet"
+    },
+    {
+      "key": "level_20",
+      "sortable_key": 20,
+      "name": "Nivell 20",
+      "word": "pesca"
+    },
+    {
+      "key": "level_21",
+      "sortable_key": 21,
+      "name": "Nivell 21",
+      "word": "rasca"
+    },
+    {
+      "key": "level_22",
+      "sortable_key": 22,
+      "name": "Nivell 22",
+      "word": "crani"
+    },
+    {
+      "key": "level_23",
+      "sortable_key": 23,
+      "name": "Nivell 23",
+      "word": "color"
+    },
+    {
+      "key": "level_24",
+      "sortable_key": 24,
+      "name": "Nivell 24",
+      "word": "clapa"
+    },
+    {
+      "key": "level_25",
+      "sortable_key": 25,
+      "name": "Nivell 25",
+      "word": "celler"
+    },
+    {
+      "key": "level_26",
+      "sortable_key": 26,
+      "name": "Nivell 26",
+      "word": "baner"
+    },
+    {
+      "key": "level_27",
+      "sortable_key": 27,
+      "name": "Nivell 27",
+      "word": "botes"
+    },
+    {
+      "key": "level_28",
+      "sortable_key": 28,
+      "name": "Nivell 28",
+      "word": "bover"
+    },
+    {
+      "key": "level_29",
+      "sortable_key": 29,
+      "name": "Nivell 29",
+      "word": "calci"
+    },
+    {
+      "key": "level_30",
+      "sortable_key": 30,
+      "name": "Nivell 30",
+      "word": "cigne"
+    },
+    {
+      "key": "level_31",
+      "sortable_key": 31,
+      "name": "Nivell 31",
+      "word": "burro"
+    },
+    {
+      "key": "level_32",
+      "sortable_key": 32,
+      "name": "Nivell 32",
+      "word": "cacau"
+    },
+    {
+      "key": "level_33",
+      "sortable_key": 33,
+      "name": "Nivell 33",
+      "word": "flora"
+    },
+    {
+      "key": "level_34",
+      "sortable_key": 34,
+      "name": "Nivell 34",
+      "word": "femur"
+    },
+    {
+      "key": "level_35",
+      "sortable_key": 35,
+      "name": "Nivell 35",
+      "word": "fisic"
+    },
+    {
+      "key": "level_36",
+      "sortable_key": 36,
+      "name": "Nivell 36",
+      "word": "fumet"
+    },
+    {
+      "key": "level_37",
+      "sortable_key": 37,
+      "name": "Nivell 37",
+      "word": "moure"
+    },
+    {
+      "key": "level_38",
+      "sortable_key": 38,
+      "name": "Nivell 38",
+      "word": "poeta"
+    },
+    {
+      "key": "level_39",
+      "sortable_key": 39,
+      "name": "Nivell 39",
+      "word": "radio"
+    },
+    {
+      "key": "level_40",
+      "sortable_key": 40,
+      "name": "Nivell 40",
+      "word": "sarau"
+    },
+    {
+      "key": "level_41",
+      "sortable_key": 41,
+      "name": "Nivell 41",
+      "word": "civic"
+    },
+    {
+      "key": "level_42",
+      "sortable_key": 42,
+      "name": "Nivell 42",
+      "word": "gelat"
+    },
+    {
+      "key": "level_43",
+      "sortable_key": 44,
+      "name": "Nivell 45",
+      "word": "gemec"
+    },
+    {
+      "key": "level_46",
+      "sortable_key": 46,
+      "name": "Nivell 46",
+      "word": "dutxa"
+    },
+    {
+      "key": "level_47",
+      "sortable_key": 47,
+      "name": "Nivell 47",
+      "word": "droga"
+    },
+    {
+      "key": "level_48",
+      "sortable_key": 48,
+      "name": "Nivell 48",
+      "word": "timid"
+    },
+    {
+      "key": "level_49",
+      "sortable_key": 49,
+      "name": "Nivell 49",
+      "word": "dotat"
+    },
+    {
+      "key": "level_50",
+      "sortable_key": 50,
+      "name": "Nivell 50",
+      "word": "etica"
+    },
+    {
+      "key": "level_51",
+      "sortable_key": 51,
+      "name": "Nivell 51",
+      "word": "zombi"
+    },
+    {
+      "key": "level_52",
+      "sortable_key": 52,
+      "name": "Nivell 52",
+      "word": "gelos"
+    },
+    {
+      "key": "level_53",
+      "sortable_key": 53,
+      "name": "Nivell 53",
+      "word": "garbo"
+    },
+    {
+      "key": "level_54",
+      "sortable_key": 54,
+      "name": "Nivell 54",
+      "word": "fulla"
+    },
+    {
+      "key": "level_55",
+      "sortable_key": 55,
+      "name": "Nivell 55",
+      "word": "fruit"
+    },
+    {
+      "key": "level_56",
+      "sortable_key": 56,
+      "name": "Nivell 56",
+      "word": "acida"
+    },
+    {
+      "key": "level_57",
+      "sortable_key": 57,
+      "name": "Nivell 57",
+      "word": "dansa"
+    },
+    {
+      "key": "level_58",
+      "sortable_key": 58,
+      "name": "Nivell 58",
+      "word": "antic"
+    },
+    {
+      "key": "level_59",
+      "sortable_key": 59,
+      "name": "Nivell 59",
+      "word": "amiga"
+    },
+    {
+      "key": "level_60",
+      "sortable_key": 60,
+      "name": "Nivell 60",
+      "word": "apnea"
+    },
+    {
+      "key": "level_61",
+      "sortable_key": 61,
+      "name": "Nivell 61",
+      "word": "anell"
+    },
+    {
+      "key": "level_62",
+      "sortable_key": 62,
+      "name": "Nivell 62",
+      "word": "cabal"
+    },
+    {
+      "key": "level_63",
+      "sortable_key": 63,
+      "name": "Nivell 63",
+      "word": "bolit"
+    },
+    {
+      "key": "level_64",
+      "sortable_key": 64,
+      "name": "Nivell 64",
+      "word": "botes"
+    },
+    {
+      "key": "level_65",
+      "sortable_key": 66,
+      "name": "Nivell 66",
+      "word": "corda"
+    },
+    {
+      "key": "level_66",
+      "sortable_key": 66,
+      "name": "Nivell 66",
+      "word": "cranc"
+    },
+    {
+      "key": "level_67",
+      "sortable_key": 67,
+      "name": "Nivell 67",
+      "word": "codol"
+    },
+    {
+      "key": "level_68",
+      "sortable_key": 68,
+      "name": "Nivell 68",
+      "word": "comic"
+    },
+    {
+      "key": "level_69",
+      "sortable_key": 69,
+      "name": "Nivell 69",
+      "word": "torre"
+    },
+    {
+      "key": "level_70",
+      "sortable_key": 70,
+      "name": "Nivell 70",
+      "word": "folla"
+    },
+    {
+      "key": "level_71",
+      "sortable_key": 71,
+      "name": "Nivell 71",
+      "word": "herba"
+    },
+    {
+      "key": "level_72",
+      "sortable_key": 72,
+      "name": "Nivell 72",
+      "word": "icona"
+    },
+    {
+      "key": "level_73",
+      "sortable_key": 73,
+      "name": "Nivell 73",
+      "word": "llima"
+    },
+    {
+      "key": "level_74",
+      "sortable_key": 74,
+      "name": "Nivell 74",
+      "word": "maluc"
+    },
+    {
+      "key": "level_75",
+      "sortable_key": 75,
+      "name": "Nivell 75",
+      "word": "munyo"
+    },
+    {
+      "key": "level_76",
+      "sortable_key": 76,
+      "name": "Nivell 76",
+      "word": "ossos"
+    },
+    {
+      "key": "level_77",
+      "sortable_key": 77,
+      "name": "Nivell 77",
+      "word": "pecat"
+    },
+    {
+      "key": "level_78",
+      "sortable_key": 78,
+      "name": "Nivell 78",
+      "word": "lexit"
+    },
+    {
+      "key": "level_79",
+      "sortable_key": 79,
+      "name": "Nivell 79",
+      "word": "etica"
+    },
+    {
+      "key": "level_80",
+      "sortable_key": 80,
+      "name": "Nivell 80",
+      "word": "ultim"
+    },
+    {
+      "key": "level_81",
+      "sortable_key": 81,
+      "name": "Nivell 81",
+      "word": "trufa"
+    },
+    {
+      "key": "level_82",
+      "sortable_key": 82,
+      "name": "Nivell 82",
+      "word": "trito"
+    },
+    {
+      "key": "level_83",
+      "sortable_key": 83,
+      "name": "Nivell 83",
+      "word": "tribu"
+    },
+    {
+      "key": "level_84",
+      "sortable_key": 84,
+      "name": "Nivell 84",
+      "word": "torro"
+    },
+    {
+      "key": "level_85",
+      "sortable_key": 85,
+      "name": "Nivell 85",
+      "word": "debat"
+    },
+    {
+      "key": "level_86",
+      "sortable_key": 86,
+      "name": "Nivell 86",
+      "word": "pomer"
+    },
+    {
+      "key": "level_87",
+      "sortable_key": 87,
+      "name": "Nivell 87",
+      "word": "metxa"
     }
   ]
 }

@@ -35,7 +35,7 @@ struct GameView: View {
                                 viewStore.send(.checkLastWord)
                             }
                         }
-                        .frame(minHeight: 30, maxHeight: 45)
+                        .frame(height: UIScreen.main.bounds.height * 0.075)
                         .padding(.horizontal, 40)
                         Spacer()
                     }

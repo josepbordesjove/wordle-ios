@@ -5,6 +5,7 @@ enum GameStateToastInfo: Equatable, Error {
     case wordDoesNotExist
     case filledSpaces
     case funFact(FunFact)
+    case lastChance
     
     var description: String {
         switch self {
@@ -16,13 +17,15 @@ enum GameStateToastInfo: Equatable, Error {
             return "Has de borrar abans d'intoduïr més caràcters"
         case .funFact(let fact):
             return fact.description
+        case .lastChance:
+            return "Només et queda una oportunitat, te'n sortiràs?"
         }
     }
     
     var toastIcon: ToastViewIcon {
         switch self {
         case .notFilledWordLength, .wordDoesNotExist, .filledSpaces: return .incorrect
-        case .funFact: return .informative
+        case .funFact, .lastChance: return .informative
         }
     }
 }

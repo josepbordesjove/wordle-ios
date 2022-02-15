@@ -66,6 +66,10 @@ final class GameReducer {
                     return self.effects.storeFinished(level: state.levelPlaying, tries: state.triedWords.count, success: currentWord == state.levelPlaying.word)
                 }
                 
+                if state.triedWords.count == state.maximumTries - 1 {
+                    state.gameToastInfo = .lastChance
+                }
+                
                 return self.effects.getFactForWord(word: currentWord)
             case .failure: return .none
             }

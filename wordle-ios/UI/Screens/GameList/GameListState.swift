@@ -11,7 +11,7 @@ struct GameListState: Equatable {
     
     var points: Int {
         finishedLevels.reduce(0) { result, level in
-            let levelPoints = level.success ? 5 - level.tries : 0
+            let levelPoints = level.success ? 6 - level.tries : 0
             return result + levelPoints
         }
     }

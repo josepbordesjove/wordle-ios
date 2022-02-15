@@ -1,8 +1,10 @@
 import Foundation
 
-enum GameStateError: Error {
+enum GameStateToastInfo: Equatable, Error {
     case notFilledWordLength
     case wordDoesNotExist
+    case filledSpaces
+    case funFact(FunFact)
     
     var description: String {
         switch self {
@@ -10,6 +12,17 @@ enum GameStateError: Error {
             return "La paraula introduïda no te la llargada suficient"
         case .wordDoesNotExist:
             return "La paraula introduïda no existeix"
+        case .filledSpaces:
+            return "Has de borrar abans d'intoduïr més caràcters"
+        case .funFact(let fact):
+            return fact.description
+        }
+    }
+    
+    var toastIcon: ToastViewIcon {
+        switch self {
+        case .notFilledWordLength, .wordDoesNotExist, .filledSpaces: return .incorrect
+        case .funFact: return .informative
         }
     }
 }
@@ -50,7 +63,7 @@ struct GameState: Equatable {
     var gameEnded: Bool = false
     var containedLetters: [Letter: LetterKeyboardStatus] = [:]
     
-    var gameError: GameStateError? = nil
+    var gameToastInfo: GameStateToastInfo? = nil
     var gameDialog: GameStateDialog? = nil
     
     init(configuration: GameConfiguration = .standard, levelPlaying: Level) {

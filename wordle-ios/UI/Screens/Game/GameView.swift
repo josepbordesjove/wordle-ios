@@ -43,8 +43,8 @@ struct GameView: View {
                         .padding(.horizontal, 40)
                         Spacer()
                     }
-                    if let error = viewStore.state.gameError {
-                        ToastView(errorMessage: error.description) {
+                    if let error = viewStore.state.gameToastInfo {
+                        ToastView(errorMessage: error.description, icon: error.toastIcon) {
                             withAnimation() {
                                 viewStore.send(.dismissToast)
                             }

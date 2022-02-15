@@ -9,6 +9,7 @@ protocol Repositoring {
     func storeFinishedLevel(level: Level, tries: Int, success: Bool) -> AnyPublisher<Bool, Error>
     func getFinishedLevels() -> AnyPublisher<[LevelFinished], Error>
     func getWordsList() -> AnyPublisher<WordsList, Error>
+    func getFunFacts() -> AnyPublisher<FunFactsList, Error>
 }
 
 final class Repository: Repositoring {
@@ -36,5 +37,9 @@ final class Repository: Repositoring {
     
     func getWordsList() -> AnyPublisher<WordsList, Error> {
         inMemoryStore.getWordsList()
+    }
+    
+    func getFunFacts() -> AnyPublisher<FunFactsList, Error> {
+        inMemoryStore.getFunFacts()
     }
 }

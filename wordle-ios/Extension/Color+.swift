@@ -12,4 +12,7 @@ extension Color {
     static let boxCorrect = Color("BoxCorrect")
     static let boxContained = Color("BoxContained")
     static let boxNotContained = Color("BoxNotContained")
+    
+    static let keyboardCorrect = Color("KeyboardCorrect")
+    static let keyboardContained = Color("KeyboardContained")
 }

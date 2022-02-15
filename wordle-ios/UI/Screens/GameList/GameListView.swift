@@ -28,7 +28,7 @@ struct GameListView: View {
                                             .opacity(viewStore.state.isLevelSuccess(level) != .unknown ? 0.6 : 1)
                                         Image(viewStore.state.isLevelSuccess(level).imageName)
                                             .resizable()
-                                            .frame(width: 25, height: 25, alignment: .center)
+                                            .frame(width: 20, height: 20, alignment: .center)
                                             .scaledToFit()
                                         Spacer()
                                             .frame(width: 5, height: 5)

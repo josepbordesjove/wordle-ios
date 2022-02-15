@@ -3,17 +3,20 @@ import Combine
 enum InMemoryStoreError: Error {
     case failedToRetrieveWordsList
     case failedToRetrieveLevels
+    case failedToRetrieveFunFactsList
 }
 
 protocol InMemoryStoring {
     func getLevels() -> AnyPublisher<[Level], Error>
     func getWordsList() -> AnyPublisher<WordsList, Error>
+    func getFunFacts() -> AnyPublisher<FunFactsList, Error>
 }
 
 final class InMemoryStore: InMemoryStoring {
     enum Constant {
         static let levelsJsonFileName = "levels"
         static let wordsListJsonFileName = "wordsFiveLetterList"
+        static let funFactsJsonFileName = "fun_facts"
     }
 
     private let localFileManager: LocalFileManager
@@ -40,6 +43,17 @@ final class InMemoryStore: InMemoryStoring {
         }
         
         return Just(data.levels)
+            .setFailureType(to: Error.self)
+            .eraseToAnyPublisher()
+    }
+    
+    func getFunFacts() -> AnyPublisher<FunFactsList, Error> {
+        guard let data = localFileManager.retrieveSyncJson(name: Constant.funFactsJsonFileName, type: FunFactsList.self) else {
+            return Fail(error: InMemoryStoreError.failedToRetrieveFunFactsList)
+                .eraseToAnyPublisher()
+        }
+        
+        return Just(data)
             .setFailureType(to: Error.self)
             .eraseToAnyPublisher()
     }

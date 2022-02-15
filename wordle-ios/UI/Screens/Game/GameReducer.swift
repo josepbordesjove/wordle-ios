@@ -11,13 +11,17 @@ final class GameReducer {
         switch action {
         case .checkLastWord:
             guard let currentWord = state.currentWord, currentWord.count == 5 else {
-                state.gameError = .notFilledWordLength
+                state.gameToastInfo = .notFilledWordLength
                 return .none
             }
 
             return self.effects.isWordContainedInList(word: currentWord)
         case .appendLetter(let letter):
-            guard !state.gameEnded, (state.currentWord ?? "").count <= state.wordMaxLength - 1 else { return .none }
+            guard !state.gameEnded, (state.currentWord ?? "").count <= state.wordMaxLength - 1 else {
+                state.gameToastInfo = .filledSpaces
+                return .none
+            }
+            
             if state.currentWord == nil {
                 state.currentWord = letter.value
             } else {
@@ -33,7 +37,7 @@ final class GameReducer {
             state.currentWord = nil
             return .none
         case .dismissToast:
-            state.gameError = nil
+            state.gameToastInfo = nil
             return .none
         case .dismissDialog:
             state.gameDialog = nil
@@ -44,12 +48,12 @@ final class GameReducer {
             switch result {
             case .success(let isWordContained):
                 guard let currentWord = state.currentWord else {
-                    state.gameError = .notFilledWordLength
+                    state.gameToastInfo = .notFilledWordLength
                     return .none
                 }
                 
                 guard isWordContained else {
-                    state.gameError = .wordDoesNotExist
+                    state.gameToastInfo = .wordDoesNotExist
                     return .none
                 }
                 
@@ -62,9 +66,18 @@ final class GameReducer {
                     return self.effects.storeFinished(level: state.levelPlaying, tries: state.triedWords.count, success: currentWord == state.levelPlaying.word)
                 }
                 
-                return .none
+                return self.effects.getFactForWord(word: currentWord)
             case .failure: return .none
             }
+        case .factForWordReceived(let result):
+            switch result {
+            case .success(let fact):
+                guard let fact = fact else { return .none }
+                state.gameToastInfo = .funFact(fact)
+            case .failure: break
+            }
+            
+            return .none
         }
     }
 }
@@ -72,11 +85,14 @@ final class GameReducer {
 final class GameEffects {
     private let storeFinishedLevelUseCase: StoreFinishedLevel.UseCase
     private let isWordContainedInListUseCase: IsWordContainedInList.UseCase
+    private let getFactForWordUseCase: GetFactForWord.UseCase
     
     init(storeFinishedLevelUseCase: @escaping StoreFinishedLevel.UseCase = StoreFinishedLevel().execute,
-         isWordContainedInListUseCase: @escaping IsWordContainedInList.UseCase = IsWordContainedInList().execute) {
+         isWordContainedInListUseCase: @escaping IsWordContainedInList.UseCase = IsWordContainedInList().execute,
+         getFactForWordUseCase: @escaping GetFactForWord.UseCase = GetFactForWord().execute) {
         self.storeFinishedLevelUseCase = storeFinishedLevelUseCase
         self.isWordContainedInListUseCase = isWordContainedInListUseCase
+        self.getFactForWordUseCase = getFactForWordUseCase
     }
     
     func storeFinished(level: Level, tries: Int, success: Bool) -> Effect<GameAction, Never> {
@@ -89,5 +105,11 @@ final class GameEffects {
         isWordContainedInListUseCase(word)
             .catchToEffect()
             .map(GameAction.isWordContainedInListReceived)
+    }
+    
+    func getFactForWord(word: String) -> Effect<GameAction, Never> {
+        getFactForWordUseCase(word)
+            .catchToEffect()
+            .map(GameAction.factForWordReceived)
     }
 }

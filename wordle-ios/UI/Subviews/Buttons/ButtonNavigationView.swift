@@ -22,6 +22,7 @@ struct ButtonNavigationView<Content: View>: View {
                         .scaledToFit()
                     Text(string)
                         .font(.custom("PalameciaTitling-Regular", size: 24))
+                        .minimumScaleFactor(0.01)
                         .foregroundColor(.white)
                 }
             default:

@@ -1,17 +1,28 @@
-//
-//  ToastView.swift
-//  wordle-ios
-//
-//  Created by Josep Bordes 2 on 12/2/22.
-//
-
 import SwiftUI
 
+enum ToastViewIcon {
+    case incorrect
+    case informative
+    
+    var image: String {
+        switch self {
+        case .incorrect: return "close_btn"
+        case .informative: return "alert_btn"
+        }
+    }
+}
+
 struct ToastView: View {
-    @State var timeRemaining = 3
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    enum Constant {
+        static let interval: Double = 1
+        static let initialTime = 6
+    }
+
+    @State var timeRemaining = Constant.initialTime
+    var timer = Timer.publish(every: Constant.interval, on: .main, in: .common).autoconnect()
     
     let errorMessage: String
+    let icon: ToastViewIcon
     var onDismiss: (() -> Void)?
     
     var body: some View {
@@ -19,21 +30,26 @@ struct ToastView: View {
             ZStack {
                 Capsule(style: .continuous)
                     .fill(Color.accentColor)
-                    .transition(.asymmetric(insertion: .scale, removal: .opacity))
+                    .background(
+                        Capsule(style: .continuous)
+                            .stroke(.white, lineWidth: 2)
+                    )
                 HStack {
-                    Image("close_btn")
+                    Image(icon.image)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 35, height: 35)
                     Text(errorMessage)
-                        .font(.custom("PalameciaTitling-Regular", size: 14))
+                        .font(.custom("PalameciaTitling-Regular", size: 16))
                         .foregroundColor(.white)
                 }
-                .padding(10)
+                .padding(16)
             }
-            .frame(height: 55)
-            .padding(.top, 45)
+            .animation(.spring())
+            .fixedSize(horizontal: false, vertical: true)
+            .padding(.top, 8)
             .padding(.horizontal, 20)
+            .shadow(radius: 5)
             .onTapGesture {
                 withAnimation {
                     onDismiss?()
@@ -43,20 +59,23 @@ struct ToastView: View {
         }
         .onReceive(timer) { _ in
             if timeRemaining > 0 {
-                timeRemaining -= 1
+                timeRemaining -= Int(Constant.interval)
             } else {
                 withAnimation {
                     onDismiss?()
                 }
             }
         }
-        .transition(AnyTransition.move(edge: .top).combined(with: .scale).combined(with: .opacity))
+        .onDisappear(perform: {
+            timeRemaining = Constant.initialTime
+        })
+        .transition(AnyTransition.move(edge: .top).combined(with: .opacity))
         .zIndex(100)
     }
 }
 
 struct ToastView_Previews: PreviewProvider {
     static var previews: some View {
-        ToastView(errorMessage: "No s'ha trobat la paraula inroduïda")
+        ToastView(errorMessage: "No s'ha trobat la paraula inroduïda", icon: .informative)
     }
 }

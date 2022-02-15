@@ -510,6 +510,84 @@
       "sortable_key": 87,
       "name": "Nivell 87",
       "word": "metxa"
+    },
+    {
+      "key": "level_88",
+      "sortable_key": 88,
+      "name": "Nivell 88",
+      "word": "astut"
+    },
+    {
+      "key": "level_89",
+      "sortable_key": 89,
+      "name": "Nivell 89",
+      "word": "avenç"
+    },
+    {
+      "key": "level_90",
+      "sortable_key": 90,
+      "name": "Nivell 90",
+      "word": "barça"
+    },
+    {
+      "key": "level_91",
+      "sortable_key": 91,
+      "name": "Nivell 91",
+      "word": "boçal"
+    },
+    {
+      "key": "level_92",
+      "sortable_key": 92,
+      "name": "Nivell 92",
+      "word": "lleva"
+    },
+    {
+      "key": "level_93",
+      "sortable_key": 93,
+      "name": "Nivell 93",
+      "word": "museu"
+    },
+    {
+      "key": "level_94",
+      "sortable_key": 94,
+      "name": "Nivell 94",
+      "word": "mobil"
+    },
+    {
+      "key": "level_95",
+      "sortable_key": 95,
+      "name": "Nivell 95",
+      "word": "pinxo"
+    },
+    {
+      "key": "level_96",
+      "sortable_key": 96,
+      "name": "Nivell 96",
+      "word": "rampa"
+    },
+    {
+      "key": "level_97",
+      "sortable_key": 97,
+      "name": "Nivell 97",
+      "word": "xufla"
+    },
+    {
+      "key": "level_98",
+      "sortable_key": 98,
+      "name": "Nivell 98",
+      "word": "xurro"
+    },
+    {
+      "key": "level_99",
+      "sortable_key": 99,
+      "name": "Nivell 99",
+      "word": "abans"
+    },
+    {
+      "key": "level_100",
+      "sortable_key": 100,
+      "name": "Nivell 100",
+      "word": "caoba"
     }
   ]
 }

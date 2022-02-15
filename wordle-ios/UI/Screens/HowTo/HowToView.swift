@@ -30,7 +30,6 @@ struct HowToView: View {
     }
 
     @Environment(\.presentationMode) var presentationMode
-    var gameState: GameState
 
     var body: some View {
         NavigationView {

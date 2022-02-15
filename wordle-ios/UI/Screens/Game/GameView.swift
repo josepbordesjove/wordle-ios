@@ -14,7 +14,7 @@ struct GameView: View {
                     VStack(spacing: 0) {
                         HeaderView {
                             ButtonNavigationView(buttonImage: .questionMarkblue) {
-                                HowToView(gameState: viewStore.state)
+                                HowToView()
                             }
                         } backButtonTapped: {
                             viewStore.send(.backButtonTapped)

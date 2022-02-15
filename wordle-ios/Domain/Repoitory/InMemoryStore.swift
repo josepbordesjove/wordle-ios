@@ -15,7 +15,7 @@ protocol InMemoryStoring {
 final class InMemoryStore: InMemoryStoring {
     enum Constant {
         static let levelsJsonFileName = "levels"
-        static let wordsListJsonFileName = "wordsFiveLetterList"
+        static let wordsListJsonFileName = "words_five_letter_list"
         static let funFactsJsonFileName = "fun_facts"
     }
 

@@ -255,9 +255,21 @@
     },
     {
       "key": "level_43",
-      "sortable_key": 44,
-      "name": "Nivell 45",
+      "sortable_key": 43,
+      "name": "Nivell 44",
       "word": "gemec"
+    },
+    {
+      "key": "level_44",
+      "sortable_key":44,
+      "name": "Nivell 44",
+      "word": "força"
+    },
+    {
+      "key": "level_45",
+      "sortable_key": 45,
+      "name": "Nivell 45",
+      "word": "forja"
     },
     {
       "key": "level_46",
@@ -375,8 +387,8 @@
     },
     {
       "key": "level_65",
-      "sortable_key": 66,
-      "name": "Nivell 66",
+      "sortable_key": 65,
+      "name": "Nivell 65",
       "word": "corda"
     },
     {

@@ -21,6 +21,7 @@ struct GameListView: View {
                             presentationMode.wrappedValue.dismiss()
                         }
                         .padding(.bottom, 10)
+                        StatsView(percentage: viewStore.state.percentageCompleted, points: viewStore.state.points)
                         ScrollView {
                             LazyVGrid(columns: Constant.columns, spacing: 20) {
                                 ForEach(viewStore.state.levels) { level in

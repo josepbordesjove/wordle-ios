@@ -10,7 +10,14 @@ struct HomeView: View {
                 ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
                     BackgroundView(style: .grass)
                     VStack {
-                        Spacer()
+                        VStack {
+                            Spacer()
+                            Image("logo_big_img")
+                                .resizable()
+                                .scaledToFit()
+                                .padding(.horizontal, 40)
+                            Spacer()
+                        }
                         HStack {
                             if let nextLevel = viewStore.state.nextLevel {
                                 ButtonNavigationView(buttonImage: .play, destination: { GameFactory.build(levelToPlay: nextLevel, onFinished: { viewStore.send(.updateNextWordChallenge) }) })

@@ -51,7 +51,7 @@ struct GameView: View {
                         }
                     }
                     if let dialog = viewStore.state.gameDialog {
-                        ModalView(title: dialog.title, subtitle: dialog.subtitle, buttonTitle: dialog.buttonTitle) {
+                        ModalView(title: dialog.title, subtitle: dialog.subtitle, extraInformation: dialog.extraInfoText, buttonTitle: dialog.buttonTitle) {
                             withAnimation() {
                                 self.onFinished?()
                                 viewStore.send(.dismissDialog)

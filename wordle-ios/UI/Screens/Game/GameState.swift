@@ -30,9 +30,9 @@ enum GameStateToastInfo: Equatable, Error {
     }
 }
 
-enum GameStateDialog {
-    case finishedSuccessfully
-    case finishedNotWinning
+enum GameStateDialog: Equatable {
+    case finishedSuccessfully(String)
+    case finishedNotWinning(String)
     
     var title: String {
         switch self {
@@ -45,6 +45,13 @@ enum GameStateDialog {
         switch self {
         case .finishedSuccessfully: return "Vas pel bon camí jove aprenent, el català no te frens amb tu."
         case .finishedNotWinning: return "Continua així. Pompeu Fabra no ho va aprendre tot amb un dia."
+        }
+    }
+    
+    var extraInfoText: String? {
+        switch self {
+        case .finishedSuccessfully(let word): return "Molt bé! Aquesta és la paraula que has encertat \"\(word)\""
+        case .finishedNotWinning(let word): return "A la pròxima l'encertaràs, la paraula correcta era \"\(word)\""
         }
     }
     

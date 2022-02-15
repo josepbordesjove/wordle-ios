@@ -24,7 +24,7 @@ struct HowToView: View {
                   description: "La paraula té la lletra \"C\" però en un altre lloc.",
                   boxForLetter: ["c": .contained("c")]),
             .init(word: "cacau",
-                  description: "La paraula no conté les lletres \"C\", \"A\", \"C\", \"U\".",
+                  description: "La paraula no conté les lletres \"C\", \"A\" ni \"U\".",
                   boxForLetter: [:])
         ]
     }

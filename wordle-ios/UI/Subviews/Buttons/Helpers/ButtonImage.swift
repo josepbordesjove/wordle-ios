@@ -16,6 +16,7 @@ enum ButtonImage {
     case select
     case settings
     case generic(String)
+    case questionMarkblue
     
     var imageName: String {
         switch self {
@@ -27,6 +28,7 @@ enum ButtonImage {
         case .select: return "select_btn"
         case .settings: return "settings_btn"
         case .generic: return "list_img"
+        case .questionMarkblue: return "question_blue_btn"
         }
     }
 }

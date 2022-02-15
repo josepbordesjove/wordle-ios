@@ -16,6 +16,8 @@ struct GameListView: View {
                     BackgroundView(style: .sky)
                     VStack(spacing: 0) {
                         HeaderView {
+                            Spacer()
+                        } backButtonTapped: {
                             presentationMode.wrappedValue.dismiss()
                         }
                         .padding(.bottom, 10)
@@ -49,6 +51,5 @@ struct GameListView: View {
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarTitle("")
         .navigationBarHidden(true)
-//        .navigationViewStyle(StackNavigationViewStyle())
     }
 }

@@ -1,10 +1,3 @@
-//
-//  ScaleButtonStyle.swift
-//  wordle-ios
-//
-//  Created by Josep Bordes 2 on 12/2/22.
-//
-
 import SwiftUI
 
 struct ScaleButtonStyle: ButtonStyle {

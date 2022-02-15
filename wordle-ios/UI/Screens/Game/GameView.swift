@@ -13,6 +13,10 @@ struct GameView: View {
                     BackgroundView(style: .sky)
                     VStack(spacing: 0) {
                         HeaderView {
+                            ButtonNavigationView(buttonImage: .questionMarkblue) {
+                                HowToView(gameState: viewStore.state)
+                            }
+                        } backButtonTapped: {
                             viewStore.send(.backButtonTapped)
                             presentationMode.wrappedValue.dismiss()
                         }

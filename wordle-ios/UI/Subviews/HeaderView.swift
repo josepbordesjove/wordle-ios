@@ -1,13 +1,7 @@
-//
-//  HeaderView.swift
-//  wordle-ios
-//
-//  Created by Josep Bordes Jové on 9/2/22.
-//
-
 import SwiftUI
 
-struct HeaderView: View {
+struct HeaderView<Content: View>: View {
+    @ViewBuilder var destination: Content
     var backButtonTapped: () -> Void
     
     var body: some View {
@@ -24,8 +18,14 @@ struct HeaderView: View {
                 .frame(height: UIScreen.main.bounds.height * 0.05)
                 .padding(.vertical, 5)
             Spacer()
-            Spacer()
-                .frame(width: 45, height: 45, alignment: .trailing)
+            if let destination = destination {
+                destination
+                .frame(width: 45, height: 45, alignment: .leading)
+                .buttonStyle(ScaleButtonStyle())
+            } else {
+                Spacer()
+                    .frame(width: 45, height: 45, alignment: .trailing)
+            }
         }
         .padding(.horizontal, 20)
         .navigationBarTitle("")

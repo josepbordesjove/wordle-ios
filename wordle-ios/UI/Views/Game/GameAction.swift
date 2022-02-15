@@ -8,4 +8,5 @@ enum GameAction {
     case dismissToast
     case dismissDialog
     case storeLevelFinishedReceived(Result<Bool, Error>)
+    case isWordContainedInListReceived(Result<Bool, Error>)
 }

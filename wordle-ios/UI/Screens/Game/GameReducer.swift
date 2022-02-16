@@ -62,7 +62,7 @@ final class GameReducer {
                 
                 if currentWord == state.levelPlaying.word || state.triedWords.count == state.maximumTries {
                     state.gameEnded = true
-                    state.gameDialog = currentWord == state.levelPlaying.word ? .finishedSuccessfully(currentWord) : .finishedNotWinning(currentWord)
+                    state.gameDialog = currentWord == state.levelPlaying.word ? .finishedSuccessfully(state.levelPlaying.word) : .finishedNotWinning(state.levelPlaying.word)
                     return self.effects.storeFinished(level: state.levelPlaying, tries: state.triedWords.count, success: currentWord == state.levelPlaying.word)
                 }
                 
